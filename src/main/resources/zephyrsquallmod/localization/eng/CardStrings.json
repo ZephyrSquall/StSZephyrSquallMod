@@ -20,5 +20,9 @@
   "${modID}:Study": {
     "NAME": "Study",
     "DESCRIPTION": "Draw !M! cards."
+  },
+  "${modID}:Focus": {
+    "NAME": "Focus",
+    "DESCRIPTION": "Discard any number of cards. NL Deal !D! damage for each discarded card."
   }
 }

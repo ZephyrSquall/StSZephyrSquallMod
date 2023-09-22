@@ -20,6 +20,7 @@ import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.relics.BurningBlood;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
+import zephyrsquallmod.cards.Focus;
 import zephyrsquallmod.cards.Strike;
 import zephyrsquallmod.cards.Defend;
 import zephyrsquallmod.cards.Study;
@@ -90,6 +91,7 @@ public class ZephyrSquallCharacter extends CustomPlayer {
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
         retVal.add(Study.ID);
+        retVal.add(Focus.ID);
 
         return retVal;
     }
