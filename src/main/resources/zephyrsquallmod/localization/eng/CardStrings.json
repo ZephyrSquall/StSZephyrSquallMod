@@ -16,5 +16,9 @@
   "${modID}:Defend": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
+  },
+  "${modID}:Study": {
+    "NAME": "Study",
+    "DESCRIPTION": "Draw !M! cards."
   }
 }
