@@ -23,6 +23,6 @@
   },
   "${modID}:Focus": {
     "NAME": "Focus",
-    "DESCRIPTION": "Discard any number of cards. NL Deal !D! damage for each discarded card."
+    "DESCRIPTION": "Discard any number of cards. Deal !D! damage per discarded card. NL zephyrsquallmod:Well_Read: Deals an additional 1 damage per discarded card."
   }
 }
