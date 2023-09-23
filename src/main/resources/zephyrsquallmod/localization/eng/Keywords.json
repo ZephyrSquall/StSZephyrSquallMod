@@ -6,5 +6,12 @@
       "well_read"
     ],
     "DESCRIPTION": "This card has a bonus effect if played while your hand is full."
+  },
+  {
+    "PROPER_NAME": "Streamline",
+    "NAMES": [
+      "streamline"
+    ],
+    "DESCRIPTION": "Streamlined cards cost 1 less [E] until played."
   }
 ]

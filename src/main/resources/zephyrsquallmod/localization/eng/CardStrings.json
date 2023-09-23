@@ -23,5 +23,13 @@
     "NAME": "Contemplate",
     "DESCRIPTION": "At the start of your turn, draw !M! additional card.",
     "UPGRADE_DESCRIPTION": "At the start of your turn, draw !M! additional cards."
+  },
+  "${modID}:FlashOfInspiration": {
+    "NAME": "Flash of Inspiration",
+    "DESCRIPTION": "Unplayable. NL Whenever this card is drawn, zephyrsquallmod:Streamline !M! random card in your hand.",
+    "UPGRADE_DESCRIPTION": "Unplayable. NL Whenever this card is drawn, zephyrsquallmod:Streamline !M! random cards in your hand.",
+    "EXTENDED_DESCRIPTION": [
+      "I can't play this card."
+    ]
   }
 }
