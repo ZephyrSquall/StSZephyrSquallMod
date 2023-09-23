@@ -14,5 +14,9 @@
   "${modID}:Focus": {
     "NAME": "Focus",
     "DESCRIPTION": "Discard any number of cards. Deal !D! damage per discarded card. NL zephyrsquallmod:Well_Read: Deals an additional 1 damage per discarded card."
+  },
+  "${modID}:BookAvalanche": {
+    "NAME": "Book Avalanche",
+    "DESCRIPTION": "Deal !D! damage. NL Deals additional damage equal to the number of cards in your deck."
   }
 }
