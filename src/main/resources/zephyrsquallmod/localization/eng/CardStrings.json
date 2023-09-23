@@ -18,5 +18,10 @@
   "${modID}:BookAvalanche": {
     "NAME": "Book Avalanche",
     "DESCRIPTION": "Deal !D! damage. NL Deals additional damage equal to the number of cards in your deck."
+  },
+  "${modID}:Contemplate": {
+    "NAME": "Contemplate",
+    "DESCRIPTION": "At the start of your turn, draw !M! additional card.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, draw !M! additional cards."
   }
 }
