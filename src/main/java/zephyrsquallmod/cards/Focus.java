@@ -21,13 +21,13 @@ public class Focus extends BaseCard {
 
     private static final int DAMAGE = 2;
     private static final int UPG_DAMAGE = 1;
-
-    private static final int WELL_READ_DAMAGE_INCREASE = 1;
+    private static final int MAGIC = 1;
 
     public Focus() {
         super(ID, info);
 
         setDamage(DAMAGE, UPG_DAMAGE);
+        setMagic(MAGIC);
     }
 
     public void triggerOnGlowCheck() {
@@ -37,7 +37,7 @@ public class Focus extends BaseCard {
     public void applyPowers() {
         int realBaseDamage = this.baseDamage;
         if (AbstractDungeon.player.hand.size() == BaseMod.MAX_HAND_SIZE)
-            this.baseDamage+= WELL_READ_DAMAGE_INCREASE;
+            this.baseDamage+= magicNumber;
         super.applyPowers();
         this.baseDamage = realBaseDamage;
         this.isDamageModified = (this.damage != this.baseDamage);
@@ -46,7 +46,7 @@ public class Focus extends BaseCard {
     public void calculateCardDamage(AbstractMonster mo) {
         int realBaseDamage = this.baseDamage;
         if (AbstractDungeon.player.hand.size() == BaseMod.MAX_HAND_SIZE)
-            this.baseDamage+= WELL_READ_DAMAGE_INCREASE;
+            this.baseDamage+= magicNumber;
         super.calculateCardDamage(mo);
         this.baseDamage = realBaseDamage;
         this.isDamageModified = (this.damage != this.baseDamage);
