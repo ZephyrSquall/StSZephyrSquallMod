@@ -10,7 +10,6 @@ import java.util.HashMap;
 import java.util.Locale;
 
 import static zephyrsquallmod.ZephyrSquallMod.*;
-import static zephyrsquallmod.ZephyrSquallMod.imagePath;
 
 public class TextureLoader {
     private static final HashMap<String, Texture> textures = new HashMap<>();

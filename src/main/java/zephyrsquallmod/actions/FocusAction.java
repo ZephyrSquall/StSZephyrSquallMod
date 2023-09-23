@@ -14,8 +14,8 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 public class FocusAction extends AbstractGameAction {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("DiscardAction");
     public static final String[] TEXT = uiStrings.TEXT;
-    private float startingDuration;
-    private int damage;
+    private final float startingDuration;
+    private final int damage;
 
     public FocusAction(AbstractCreature target, AbstractCreature source, int damage) {
         setValues(target, source);
