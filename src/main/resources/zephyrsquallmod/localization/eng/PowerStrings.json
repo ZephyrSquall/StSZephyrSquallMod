@@ -1,8 +1,9 @@
 {
-  "${modID}:PowerID": {
-    "NAME": "Ultimate Power",
+  "${modID}:Tailwind": {
+    "NAME": "Tailwind",
     "DESCRIPTIONS": [
-      "You are Very Cool and Strong."
+      "If you end your turn with #b",
+      " #yTailwind, take an extra turn."
     ]
   }
 }

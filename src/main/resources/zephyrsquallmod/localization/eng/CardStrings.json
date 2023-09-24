@@ -38,11 +38,15 @@
     "UPGRADE_DESCRIPTION": "Gain Block equal to the damage intention of an enemy.",
     "EXTENDED_DESCRIPTION": [
       " NL (Gains !B! Block.)",
-      " NL (That enemy does not intend to attack.)"
+      " NL (No effect.)"
     ]
   },
   "${modID}:FurySwipes": {
     "NAME": "Fury Swipes",
     "DESCRIPTION": "zephyrsquallmod:Streamline ALL cards containing \"Strike\"."
+  },
+  "${modID}:Swirl": {
+    "NAME": "Swirl",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! zephyrsquallmod:Tailwind."
   }
 }

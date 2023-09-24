@@ -12,6 +12,13 @@
     "NAMES": [
       "streamline"
     ],
-    "DESCRIPTION": "Streamlined cards cost 1 less [E] until played. Cards that cost 0 cannot be Streamlined further."
+    "DESCRIPTION": "#yStreamlined cards cost #b1 less [E] until played. Cards that cost #b0 cannot be #yStreamlined further."
+  },
+  {
+    "PROPER_NAME": "Tailwind",
+    "NAMES": [
+      "tailwind"
+    ],
+    "DESCRIPTION": "If you end your turn with #b10 #yTailwind, take an extra turn."
   }
 ]
