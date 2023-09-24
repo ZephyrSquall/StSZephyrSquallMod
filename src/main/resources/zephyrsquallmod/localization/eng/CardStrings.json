@@ -40,5 +40,9 @@
       " NL (Gains !B! Block.)",
       " NL (That enemy does not intend to attack.)"
     ]
+  },
+  "${modID}:FurySwipes": {
+    "NAME": "Fury Swipes",
+    "DESCRIPTION": "zephyrsquallmod:Streamline ALL cards containing \"Strike\"."
   }
 }
