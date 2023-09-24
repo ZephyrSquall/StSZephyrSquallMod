@@ -31,5 +31,14 @@
     "EXTENDED_DESCRIPTION": [
       "I can't play this card."
     ]
+  },
+  "${modID}:EscapePlan": {
+    "NAME": "Escape Plan",
+    "DESCRIPTION": "Gain Block equal to half the damage intention of an enemy.",
+    "UPGRADE_DESCRIPTION": "Gain Block equal to the damage intention of an enemy.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Gains !B! Block.)",
+      " NL (That enemy does not intend to attack.)"
+    ]
   }
 }

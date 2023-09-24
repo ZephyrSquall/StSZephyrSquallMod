@@ -16,7 +16,6 @@ public class StreamlineSpecificCardAction extends AbstractGameAction {
     private final float startingDuration;
 
     public StreamlineSpecificCardAction(AbstractCard targetCard) {
-        setValues(target, source);
         this.targetCard = targetCard;
         this.startingDuration = Settings.ACTION_DUR_FAST;
         this.duration = Settings.ACTION_DUR_FAST;
