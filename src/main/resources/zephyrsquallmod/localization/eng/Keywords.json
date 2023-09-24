@@ -12,6 +12,6 @@
     "NAMES": [
       "streamline"
     ],
-    "DESCRIPTION": "Streamlined cards cost 1 less [E] until played."
+    "DESCRIPTION": "Streamlined cards cost 1 less [E] until played. Cards that cost 0 cannot be Streamlined further."
   }
 ]
