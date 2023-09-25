@@ -34,7 +34,8 @@ public class ZephyrSquallMod implements
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         PostInitializeSubscriber,
-        OnStartBattleSubscriber {
+        OnStartBattleSubscriber,
+        OnPlayerTurnStartSubscriber {
     public static ModInfo info;
     public static String modID; //Edit your pom.xml to change this
     static { loadModInfo(); }
@@ -222,9 +223,22 @@ public class ZephyrSquallMod implements
                 CHAR_SELECT_BUTTON, CHAR_SELECT_PORTRAIT, ZephyrSquallCharacter.Enums.ZEPHYR_SQUALL);
     }
 
+    // Use this if you are checking whether it is an extra turn created by Tailwind.
+    public static boolean isTailwindExtraTurn = false;
+    // This variable is solely to make sure isTailwindExtraTurn isn't set back to false immediately upon the extra turn starting.
+    public static boolean isStartingTailwindExtraTurn = false;
     public static int tailwindGained = 0;
+
+    @Override
+    public void receiveOnPlayerTurnStart() {
+        if (!isStartingTailwindExtraTurn)
+            isTailwindExtraTurn = false;
+        isStartingTailwindExtraTurn = false;
+    }
     @Override
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
+        isTailwindExtraTurn = false;
+        isStartingTailwindExtraTurn = false;
         tailwindGained = 0;
     }
 }

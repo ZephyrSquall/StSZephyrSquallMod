@@ -31,6 +31,8 @@ public class TailwindPower extends BasePower {
             addToBot(new VFXAction(new WhirlwindEffect(new Color(0.6F, 1.0F, 1.0F, 1.0F), false)));
             addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, TailwindPower.POWER_ID));
             addToBot(new SkipEnemiesTurnAction());
+            ZephyrSquallMod.isTailwindExtraTurn = true;
+            ZephyrSquallMod.isStartingTailwindExtraTurn = true;
         }
     }
 }
