@@ -10,12 +10,15 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.UIStrings;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
 
 public class FocusAction extends AbstractGameAction {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("DiscardAction");
     public static final String[] TEXT = uiStrings.TEXT;
+    private static final ArrayList<AttackEffect> slashEffects = new ArrayList<>( Arrays.asList(AttackEffect.SLASH_HORIZONTAL, AttackEffect.SLASH_VERTICAL, AttackEffect.SLASH_DIAGONAL, AttackEffect.SLASH_HEAVY));
     private int damage;
 
     public FocusAction(AbstractCreature target, AbstractCreature source, int damage) {
@@ -29,9 +32,12 @@ public class FocusAction extends AbstractGameAction {
     }
 
     Consumer<List<AbstractCard>> discardSelected = cards -> {
+        int effectIndex = 0;
         for(AbstractCard card : cards) {
             addToBot(new DiscardSpecificCardAction(card));
-            addToBot(new DamageAction(this.target, new DamageInfo(this.source, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+            AttackEffect slashEffect = slashEffects.get(effectIndex);
+            effectIndex = (effectIndex + 1) % 4;
+            addToBot(new DamageAction(this.target, new DamageInfo(this.source, this.damage, DamageInfo.DamageType.NORMAL), slashEffect));
         }
     };
  }
