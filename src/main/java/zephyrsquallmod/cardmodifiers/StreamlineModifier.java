@@ -62,7 +62,7 @@ public class StreamlineModifier extends AbstractCardModifier {
     }
 
     public void applyAgain(AbstractCard card) {
-        if (!ZephyrSquallMod.canBeStreamlined.test(card))
+        if (ZephyrSquallMod.canBeStreamlined.test(card))
             reduceCost(card);
     }
 
