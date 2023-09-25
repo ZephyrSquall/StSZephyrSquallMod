@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.actions.watcher.SkipEnemiesTurnAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.combat.WhirlwindEffect;
+import zephyrsquallmod.ZephyrSquallMod;
 
 import static zephyrsquallmod.ZephyrSquallMod.makeID;
 
@@ -18,6 +19,7 @@ public class TailwindPower extends BasePower {
 
     public TailwindPower(AbstractCreature owner, int amount) {
         super(POWER_ID, TYPE, TURN_BASED, owner, amount);
+        ZephyrSquallMod.tailwindGained += amount;
     }
 
     public void updateDescription() {

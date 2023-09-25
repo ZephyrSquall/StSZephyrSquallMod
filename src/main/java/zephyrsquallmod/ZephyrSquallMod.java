@@ -4,6 +4,7 @@ import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.interfaces.*;
 import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import zephyrsquallmod.cards.BaseCard;
 import zephyrsquallmod.character.ZephyrSquallCharacter;
 import zephyrsquallmod.util.GeneralUtils;
@@ -32,7 +33,8 @@ public class ZephyrSquallMod implements
         EditCardsSubscriber,
         EditStringsSubscriber,
         EditKeywordsSubscriber,
-        PostInitializeSubscriber {
+        PostInitializeSubscriber,
+        OnStartBattleSubscriber {
     public static ModInfo info;
     public static String modID; //Edit your pom.xml to change this
     static { loadModInfo(); }
@@ -218,5 +220,11 @@ public class ZephyrSquallMod implements
     public void receiveEditCharacters() {
         BaseMod.addCharacter(new ZephyrSquallCharacter(),
                 CHAR_SELECT_BUTTON, CHAR_SELECT_PORTRAIT, ZephyrSquallCharacter.Enums.ZEPHYR_SQUALL);
+    }
+
+    public static int tailwindGained = 0;
+    @Override
+    public void receiveOnBattleStart(AbstractRoom abstractRoom) {
+        tailwindGained = 0;
     }
 }

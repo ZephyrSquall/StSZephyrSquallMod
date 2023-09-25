@@ -47,6 +47,10 @@
   },
   "${modID}:Swirl": {
     "NAME": "Swirl",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! zephyrsquallmod:Tailwind."
+    "DESCRIPTION": "Gain !B! Block. NL Gain` !M! zephyrsquallmod:Tailwind."
+  },
+  "${modID}:Gust": {
+    "NAME": "Gust",
+    "DESCRIPTION": "Deal !D! damage. NL Deals additional damage equal to zephyrsquallmod:Tailwind gained this combat."
   }
 }
