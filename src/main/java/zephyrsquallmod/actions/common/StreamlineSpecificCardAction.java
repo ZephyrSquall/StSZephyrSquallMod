@@ -1,4 +1,4 @@
-package zephyrsquallmod.actions;
+package zephyrsquallmod.actions.common;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;

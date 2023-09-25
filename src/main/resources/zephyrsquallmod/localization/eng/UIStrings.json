@@ -1,7 +1,8 @@
 {
   "${modID}:StreamlineAction": {
     "TEXT": [
-      "Streamline"
+      "Streamline",
+      "I have no cards that can be Streamlined!"
     ]
   }
 }

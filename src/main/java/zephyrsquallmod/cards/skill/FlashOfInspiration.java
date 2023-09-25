@@ -1,9 +1,9 @@
-package zephyrsquallmod.cards;
+package zephyrsquallmod.cards.skill;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import zephyrsquallmod.actions.FlashOfInspirationAction;
+import zephyrsquallmod.actions.unique.FlashOfInspirationAction;
+import zephyrsquallmod.cards.BaseCard;
 import zephyrsquallmod.character.ZephyrSquallCharacter;
 import zephyrsquallmod.util.CardStats;
 
@@ -32,7 +32,7 @@ public class FlashOfInspiration extends BaseCard {
     }
 
     public void triggerWhenDrawn() {
-        addToBot(new FlashOfInspirationAction(AbstractDungeon.player, AbstractDungeon.player, magicNumber));
+        addToBot(new FlashOfInspirationAction(magicNumber));
     }
 
     @Override

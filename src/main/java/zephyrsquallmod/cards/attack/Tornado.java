@@ -1,4 +1,4 @@
-package zephyrsquallmod.cards;
+package zephyrsquallmod.cards.attack;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import zephyrsquallmod.ZephyrSquallMod;
+import zephyrsquallmod.cards.BaseCard;
 import zephyrsquallmod.character.ZephyrSquallCharacter;
 import zephyrsquallmod.util.CardStats;
 

@@ -1,8 +1,9 @@
-package zephyrsquallmod.cards;
+package zephyrsquallmod.cards.skill;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import zephyrsquallmod.actions.FurySwipesAction;
+import zephyrsquallmod.actions.unique.FurySwipesAction;
+import zephyrsquallmod.cards.BaseCard;
 import zephyrsquallmod.character.ZephyrSquallCharacter;
 import zephyrsquallmod.util.CardStats;
 

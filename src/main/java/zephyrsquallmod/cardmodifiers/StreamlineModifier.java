@@ -2,6 +2,7 @@ package zephyrsquallmod.cardmodifiers;
 
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import zephyrsquallmod.ZephyrSquallMod;
 
 import java.util.ArrayList;
 
@@ -27,7 +28,7 @@ public class StreamlineModifier extends AbstractCardModifier {
         // 0 or less cannot be Streamlined further (they still count as Streamlined if they were previously Streamlined,
         // but won't start counting as Streamlined if they weren't already Streamlined). In this case, simply remove
         // this modifier immediately with no effect.
-        if (isCardFree(card)) {
+        if (!ZephyrSquallMod.canBeStreamlined.test(card)) {
             removeSpecificModifier(card, this, false);
             return;
         }
@@ -60,12 +61,8 @@ public class StreamlineModifier extends AbstractCardModifier {
         reduceCost(card);
     }
 
-    private boolean isCardFree(AbstractCard card) {
-        return card.cost <= 0 || card.costForTurn <= 0 || card.freeToPlayOnce;
-    }
-
     public void applyAgain(AbstractCard card) {
-        if (!isCardFree(card))
+        if (!ZephyrSquallMod.canBeStreamlined.test(card))
             reduceCost(card);
     }
 

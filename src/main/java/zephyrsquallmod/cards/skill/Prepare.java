@@ -1,9 +1,10 @@
-package zephyrsquallmod.cards;
+package zephyrsquallmod.cards.skill;
 
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import zephyrsquallmod.actions.StreamlineAction;
+import zephyrsquallmod.actions.common.StreamlineAction;
+import zephyrsquallmod.cards.BaseCard;
 import zephyrsquallmod.character.ZephyrSquallCharacter;
 import zephyrsquallmod.util.CardStats;
 
@@ -32,7 +33,7 @@ public class Prepare extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, p, block));
         for(int i = 0; i < magicNumber; i++) {
-            addToBot(new StreamlineAction(p, p));
+            addToBot(new StreamlineAction());
         }
     }
 }

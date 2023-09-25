@@ -1,13 +1,14 @@
-package zephyrsquallmod.cards;
+package zephyrsquallmod.cards.skill;
 
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import zephyrsquallmod.cards.BaseCard;
 import zephyrsquallmod.character.ZephyrSquallCharacter;
 import zephyrsquallmod.util.CardStats;
 
-public class Defend extends BaseCard {
-    public static final String ID = makeID(Defend.class.getSimpleName());
+public class Study extends BaseCard {
+    public static final String ID = makeID(Study.class.getSimpleName());
     private static final CardStats info = new CardStats(
             ZephyrSquallCharacter.Enums.CARD_COLOR,
             CardType.SKILL,
@@ -16,18 +17,17 @@ public class Defend extends BaseCard {
             1
     );
 
-    private static final int BLOCK = 5;
-    private static final int UPG_BLOCK = 3;
+    private static final int MAGIC = 2;
+    private static final int UPG_MAGIC = 1;
 
-    public Defend() {
+    public Study() {
         super(ID, info);
 
-        setBlock(BLOCK, UPG_BLOCK);
-        tags.add(CardTags.STARTER_DEFEND);
+        setMagic(MAGIC, UPG_MAGIC);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new GainBlockAction(p, p, block));
+        addToBot(new DrawCardAction(p, magicNumber));
     }
 }

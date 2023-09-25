@@ -1,8 +1,9 @@
-package zephyrsquallmod.cards;
+package zephyrsquallmod.cards.skill;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import zephyrsquallmod.actions.EscapePlanAction;
+import zephyrsquallmod.actions.unique.EscapePlanAction;
+import zephyrsquallmod.cards.BaseCard;
 import zephyrsquallmod.character.ZephyrSquallCharacter;
 import zephyrsquallmod.util.CardStats;
 
@@ -50,6 +51,6 @@ public class EscapePlan extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new EscapePlanAction(m, p, block));
+        addToBot(new EscapePlanAction(m, block));
     }
 }

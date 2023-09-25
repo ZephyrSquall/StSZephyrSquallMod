@@ -4,6 +4,7 @@ import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.interfaces.*;
 import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import zephyrsquallmod.cards.BaseCard;
 import zephyrsquallmod.character.ZephyrSquallCharacter;
@@ -26,6 +27,7 @@ import org.scannotation.AnnotationDB;
 
 import java.nio.charset.StandardCharsets;
 import java.util.*;
+import java.util.function.Predicate;
 
 @SpireInitializer
 public class ZephyrSquallMod implements
@@ -223,6 +225,7 @@ public class ZephyrSquallMod implements
                 CHAR_SELECT_BUTTON, CHAR_SELECT_PORTRAIT, ZephyrSquallCharacter.Enums.ZEPHYR_SQUALL);
     }
 
+    public static Predicate<AbstractCard> canBeStreamlined = card -> card.cost > 0 && card.costForTurn > 0 && !card.freeToPlayOnce;
     // Use this if you are checking whether it is an extra turn created by Tailwind.
     public static boolean isTailwindExtraTurn = false;
     // This variable is solely to make sure isTailwindExtraTurn isn't set back to false immediately upon the extra turn starting.
