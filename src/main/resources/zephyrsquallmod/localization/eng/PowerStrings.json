@@ -5,5 +5,12 @@
       "If you end your turn with #b",
       " #yTailwind, take an extra turn."
     ]
+  },
+  "${modID}:PressureSystem": {
+    "NAME": "Pressure System",
+    "DESCRIPTIONS": [
+      "At the start of your turn, gain #b",
+      " #yTailwind."
+    ]
   }
 }

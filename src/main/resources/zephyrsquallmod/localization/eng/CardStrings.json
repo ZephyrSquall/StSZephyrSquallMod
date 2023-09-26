@@ -60,5 +60,9 @@
   "${modID}:Prepare": {
     "NAME": "Prepare",
     "DESCRIPTION": "Gain !B! Block. NL zephyrsquallmod:Streamline !M! card in your hand."
+  },
+  "${modID}:PressureSystem": {
+    "NAME": "Pressure System",
+    "DESCRIPTION": "At the start of your turn, gain !M! zephyrsquallmod:Tailwind."
   }
 }

@@ -22,7 +22,7 @@ public class FurySwipes extends BaseCard {
     public FurySwipes() {
         super(ID, info);
 
-        this.setCostUpgrade(UPG_COST);
+        setCostUpgrade(UPG_COST);
     }
 
     @Override
