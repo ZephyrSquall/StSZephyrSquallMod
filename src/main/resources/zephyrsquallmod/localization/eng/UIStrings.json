@@ -1,14 +1,14 @@
 {
-  "${modID}:StreamlineAction": {
-    "TEXT": [
-      "Streamline",
-      "I have no cards that can be Streamlined!"
-    ]
-  },
   "${modID}:RecordAction": {
     "TEXT": [
       "Record",
       "I have no cards that can be Recorded!"
+    ]
+  },
+  "${modID}:StreamlineAction": {
+    "TEXT": [
+      "Streamline",
+      "I have no cards that can be Streamlined!"
     ]
   }
 }

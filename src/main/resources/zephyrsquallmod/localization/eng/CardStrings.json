@@ -1,70 +1,4 @@
 {
-  "${modID}:Strike": {
-    "NAME": "Strike",
-    "DESCRIPTION": "Deal !D! damage."
-  },
-  "${modID}:Defend": {
-    "NAME": "Defend",
-    "DESCRIPTION": "Gain !B! Block."
-  },
-  "${modID}:Study": {
-    "NAME": "Study",
-    "DESCRIPTION": "Draw !M! cards."
-  },
-  "${modID}:Focus": {
-    "NAME": "Focus",
-    "DESCRIPTION": "Discard any number of cards. Deal !D! damage per discarded card. NL zephyrsquallmod:Well_Read: Deals an additional !M! damage per discarded card."
-  },
-  "${modID}:BookAvalanche": {
-    "NAME": "Book Avalanche",
-    "DESCRIPTION": "Deal !D! damage. NL Deals additional damage equal to the number of cards in your deck."
-  },
-  "${modID}:Contemplate": {
-    "NAME": "Contemplate",
-    "DESCRIPTION": "At the start of your turn, draw !M! additional card.",
-    "UPGRADE_DESCRIPTION": "At the start of your turn, draw !M! additional cards."
-  },
-  "${modID}:FlashOfInspiration": {
-    "NAME": "Flash of Inspiration",
-    "DESCRIPTION": "Unplayable. NL Whenever this card is drawn, zephyrsquallmod:Streamline !M! random card in your hand.",
-    "UPGRADE_DESCRIPTION": "Unplayable. NL Whenever this card is drawn, zephyrsquallmod:Streamline !M! random cards in your hand.",
-    "EXTENDED_DESCRIPTION": [
-      "I can't play this card."
-    ]
-  },
-  "${modID}:EscapePlan": {
-    "NAME": "Escape Plan",
-    "DESCRIPTION": "Gain Block equal to half the damage intention of an enemy.",
-    "UPGRADE_DESCRIPTION": "Gain Block equal to the damage intention of an enemy.",
-    "EXTENDED_DESCRIPTION": [
-      " NL (Gains !B! Block.)",
-      " NL (No effect.)"
-    ]
-  },
-  "${modID}:FurySwipes": {
-    "NAME": "Fury Swipes",
-    "DESCRIPTION": "zephyrsquallmod:Streamline ALL cards containing \"Strike\"."
-  },
-  "${modID}:Swirl": {
-    "NAME": "Swirl",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! zephyrsquallmod:Tailwind."
-  },
-  "${modID}:Gust": {
-    "NAME": "Gust",
-    "DESCRIPTION": "Deal !D! damage. NL Deals additional damage equal to zephyrsquallmod:Tailwind gained this combat."
-  },
-  "${modID}:Tornado": {
-    "NAME": "Tornado",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies !M! times. NL If it is an extra turn created by zephyrsquallmod:Tailwind, deals damage !M! additional times."
-  },
-  "${modID}:Prepare": {
-    "NAME": "Prepare",
-    "DESCRIPTION": "Gain !B! Block. NL zephyrsquallmod:Streamline !M! card in your hand."
-  },
-  "${modID}:PressureSystem": {
-    "NAME": "Pressure System",
-    "DESCRIPTION": "At the start of your turn, gain !M! zephyrsquallmod:Tailwind."
-  },
   "${modID}:Book": {
     "NAME": "Book",
     "DESCRIPTION": "Retain. NL Return the zephyrsquallmod:Recorded cards to your hand. NL Exhaust.",
@@ -75,6 +9,72 @@
       " to your hand. NL Exhaust.",
       "Retain. NL Return nothing to your hand. NL Exhaust."
     ]
+  },
+  "${modID}:BookAvalanche": {
+    "NAME": "Book Avalanche",
+    "DESCRIPTION": "Deal !D! damage. NL Deals additional damage equal to the number of cards in your deck."
+  },
+  "${modID}:Contemplate": {
+    "NAME": "Contemplate",
+    "DESCRIPTION": "At the start of your turn, draw !M! additional card.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, draw !M! additional cards."
+  },
+  "${modID}:Defend": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "${modID}:EscapePlan": {
+    "NAME": "Escape Plan",
+    "DESCRIPTION": "Gain Block equal to half the damage intention of an enemy.",
+    "UPGRADE_DESCRIPTION": "Gain Block equal to the damage intention of an enemy.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Gains !B! Block.)",
+      " NL (No effect.)"
+    ]
+  },
+  "${modID}:FlashOfInspiration": {
+    "NAME": "Flash of Inspiration",
+    "DESCRIPTION": "Unplayable. NL Whenever this card is drawn, zephyrsquallmod:Streamline !M! random card in your hand.",
+    "UPGRADE_DESCRIPTION": "Unplayable. NL Whenever this card is drawn, zephyrsquallmod:Streamline !M! random cards in your hand.",
+    "EXTENDED_DESCRIPTION": [
+      "I can't play this card."
+    ]
+  },
+  "${modID}:Focus": {
+    "NAME": "Focus",
+    "DESCRIPTION": "Discard any number of cards. Deal !D! damage per discarded card. NL zephyrsquallmod:Well_Read: Deals an additional !M! damage per discarded card."
+  },
+  "${modID}:FurySwipes": {
+    "NAME": "Fury Swipes",
+    "DESCRIPTION": "zephyrsquallmod:Streamline ALL cards containing \"Strike\"."
+  },
+  "${modID}:Gust": {
+    "NAME": "Gust",
+    "DESCRIPTION": "Deal !D! damage. NL Deals additional damage equal to zephyrsquallmod:Tailwind gained this combat."
+  },
+  "${modID}:Prepare": {
+    "NAME": "Prepare",
+    "DESCRIPTION": "Gain !B! Block. NL zephyrsquallmod:Streamline !M! card in your hand."
+  },
+  "${modID}:PressureSystem": {
+    "NAME": "Pressure System",
+    "DESCRIPTION": "At the start of your turn, gain !M! zephyrsquallmod:Tailwind."
+  },
+  "${modID}:Strike": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "${modID}:Study": {
+    "NAME": "Study",
+    "DESCRIPTION": "Draw !M! cards."
+  },
+  "${modID}:Swirl": {
+    "NAME": "Swirl",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! zephyrsquallmod:Tailwind."
+  },
+  "${modID}:Tornado": {
+    "NAME": "Tornado",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies !M! times. NL If it is an extra turn created by zephyrsquallmod:Tailwind, deals damage !M! additional times."
   },
   "${modID}:Write": {
     "NAME": "Write",
