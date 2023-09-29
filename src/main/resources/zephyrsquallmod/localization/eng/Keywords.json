@@ -20,5 +20,13 @@
       "tailwind"
     ],
     "DESCRIPTION": "If you end your turn with #b10 #yTailwind, take an extra turn."
+  },
+  {
+    "PROPER_NAME": "Record",
+    "NAMES": [
+      "record",
+      "recorded"
+    ],
+    "DESCRIPTION": "Recorded cards are Exhausted. Add a Book to your hand."
   }
 ]

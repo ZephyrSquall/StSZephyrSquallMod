@@ -64,5 +64,20 @@
   "${modID}:PressureSystem": {
     "NAME": "Pressure System",
     "DESCRIPTION": "At the start of your turn, gain !M! zephyrsquallmod:Tailwind."
+  },
+  "${modID}:Book": {
+    "NAME": "Book",
+    "DESCRIPTION": "Retain. NL Return the zephyrsquallmod:Recorded cards to your hand. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Retain. NL Return *",
+      ", *",
+      ", and *",
+      " to your hand. NL Exhaust.",
+      "Retain. NL Return nothing to your hand. NL Exhaust."
+    ]
+  },
+  "${modID}:Write": {
+    "NAME": "Write",
+    "DESCRIPTION": "zephyrsquallmod:Record up to !M! cards in your hand."
   }
 }
