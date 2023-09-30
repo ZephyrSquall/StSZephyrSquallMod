@@ -1,4 +1,12 @@
 {
+  "${modID}:MindMap": {
+    "NAME": "Mind Map",
+    "DESCRIPTIONS": [
+      "The first time you try to draw a card while your hand is full each turn, play the top card of your draw pile.",
+      "The first time you try to draw a card while your hand is full each turn, play the top #b",
+      " cards of your draw pile."
+    ]
+  },
   "${modID}:PressureSystem": {
     "NAME": "Pressure System",
     "DESCRIPTIONS": [

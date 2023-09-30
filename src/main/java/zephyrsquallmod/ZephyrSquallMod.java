@@ -231,12 +231,14 @@ public class ZephyrSquallMod implements
     // This variable is solely to make sure isTailwindExtraTurn isn't set back to false immediately upon the extra turn starting.
     public static boolean isStartingTailwindExtraTurn = false;
     public static int tailwindGained = 0;
+    public static boolean hasAttemptedDrawWithFullHandThisTurn = false;
 
     @Override
     public void receiveOnPlayerTurnStart() {
         if (!isStartingTailwindExtraTurn)
             isTailwindExtraTurn = false;
         isStartingTailwindExtraTurn = false;
+        hasAttemptedDrawWithFullHandThisTurn = false;
     }
     @Override
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
