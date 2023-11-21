@@ -18,12 +18,12 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
-import com.megacrit.cardcrawl.relics.BurningBlood;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import zephyrsquallmod.cards.attack.Focus;
 import zephyrsquallmod.cards.attack.Strike;
 import zephyrsquallmod.cards.skill.Defend;
 import zephyrsquallmod.cards.skill.Study;
+import zephyrsquallmod.relics.FieldJournal;
 
 import java.util.ArrayList;
 
@@ -100,7 +100,7 @@ public class ZephyrSquallCharacter extends CustomPlayer {
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
         //IDs of starting relics. You can have multiple, but one is recommended.
-        retVal.add(BurningBlood.ID);
+        retVal.add(FieldJournal.ID);
 
         return retVal;
     }
