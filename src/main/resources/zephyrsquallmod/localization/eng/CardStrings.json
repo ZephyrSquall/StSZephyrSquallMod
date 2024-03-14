@@ -76,6 +76,10 @@
     "NAME": "Swirl",
     "DESCRIPTION": "Gain !B! Block. NL Gain !M! zephyrsquallmod:Tailwind."
   },
+  "${modID}:TomeSmack": {
+    "NAME": "Tome Smack",
+    "DESCRIPTION": "zephyrsquallmod:Record !M! card. NL Deal !D! damage."
+  },
   "${modID}:Tornado": {
     "NAME": "Tornado",
     "DESCRIPTION": "Deal !D! damage to ALL enemies !M! times. NL If it is an extra turn created by zephyrsquallmod:Tailwind, deals damage !M! additional times."
