@@ -14,6 +14,13 @@
     "NAME": "Book Avalanche",
     "DESCRIPTION": "Deal !D! damage. NL Deals additional damage equal to the number of cards in your deck."
   },
+  "${modID}:CalculatedStrike": {
+    "NAME": "Calculated Strike",
+    "DESCRIPTION": "Can only be played if this card costs 0. NL Deal !D! damage.",
+    "EXTENDED_DESCRIPTION": [
+      "This card doesn't cost 0!"
+    ]
+  },
   "${modID}:Contemplate": {
     "NAME": "Contemplate",
     "DESCRIPTION": "At the start of your turn, draw !M! additional card.",
