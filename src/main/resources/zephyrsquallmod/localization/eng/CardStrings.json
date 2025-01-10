@@ -72,6 +72,10 @@
     "NAME": "Study",
     "DESCRIPTION": "Draw !M! cards."
   },
+  "${modID}:SwiftStrike": {
+    "NAME": "Swift Strike",
+    "DESCRIPTION": "Deal !D! damage. NL If this card costs 0, draw !M! card and zephyrsquallmod:Streamline !M! card."
+  },
   "${modID}:Swirl": {
     "NAME": "Swirl",
     "DESCRIPTION": "Gain !B! Block. NL Gain !M! zephyrsquallmod:Tailwind."
