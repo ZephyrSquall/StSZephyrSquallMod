@@ -22,6 +22,10 @@ public class FurySwipesAction extends AbstractGameAction {
             if (c.hasTag(AbstractCard.CardTags.STRIKE))
                 addToBot(new StreamlineSpecificCardAction(c));
         }
+        for (AbstractCard c : AbstractDungeon.player.exhaustPile.group) {
+            if (c.hasTag(AbstractCard.CardTags.STRIKE))
+                addToBot(new StreamlineSpecificCardAction(c));
+        }
         this.isDone = true;
     }
 }
