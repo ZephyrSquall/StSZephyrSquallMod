@@ -34,8 +34,8 @@
   },
   "${modID}:FlashOfInspiration": {
     "NAME": "Flash of Inspiration",
-    "DESCRIPTION": "Unplayable. NL Whenever this card is drawn, zephyrsquallmod:Streamline !M! random card in your hand.",
-    "UPGRADE_DESCRIPTION": "Unplayable. NL Whenever this card is drawn, zephyrsquallmod:Streamline !M! random cards in your hand.",
+    "DESCRIPTION": "Unplayable. NL Whenever this card is drawn, zephyrsquallmod:Streamline !M! card at random.",
+    "UPGRADE_DESCRIPTION": "Unplayable. NL Whenever this card is drawn, zephyrsquallmod:Streamline !M! cards at random.",
     "EXTENDED_DESCRIPTION": [
       "I can't play this card."
     ]
@@ -58,7 +58,7 @@
   },
   "${modID}:Prepare": {
     "NAME": "Prepare",
-    "DESCRIPTION": "Gain !B! Block. NL zephyrsquallmod:Streamline !M! card in your hand."
+    "DESCRIPTION": "Gain !B! Block. NL zephyrsquallmod:Streamline !M! card."
   },
   "${modID}:PressureSystem": {
     "NAME": "Pressure System",
@@ -86,6 +86,6 @@
   },
   "${modID}:Write": {
     "NAME": "Write",
-    "DESCRIPTION": "zephyrsquallmod:Record up to !M! cards in your hand."
+    "DESCRIPTION": "zephyrsquallmod:Record up to !M! cards."
   }
 }

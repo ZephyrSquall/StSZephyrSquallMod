@@ -12,7 +12,7 @@ public class EscapePlan extends BaseCard {
     private static final CardStats info = new CardStats(
             ZephyrSquallCharacter.Enums.CARD_COLOR,
             CardType.SKILL,
-            CardRarity.COMMON,
+            CardRarity.UNCOMMON,
             CardTarget.SELF_AND_ENEMY,
             2
     );

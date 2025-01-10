@@ -22,7 +22,7 @@ public class TomeSmack extends BaseCard {
     );
 
     private static final int DAMAGE = 7;
-    private static final int UPG_DAMAGE = 10;
+    private static final int UPG_DAMAGE = 3;
     private static final int MAGIC = 1;
 
     public TomeSmack() {

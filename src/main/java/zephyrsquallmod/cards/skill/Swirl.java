@@ -19,15 +19,15 @@ public class Swirl extends BaseCard {
             1
     );
 
-    private static final int BLOCK = 3;
-    private static final int UPG_BLOCK = 5;
+    private static final int BLOCK = 5;
     private static final int MAGIC = 1;
+    private static final int UPG_MAGIC = 1;
 
     public Swirl() {
         super(ID, info);
 
-        setBlock(BLOCK, UPG_BLOCK);
-        setMagic(MAGIC);
+        setBlock(BLOCK);
+        setMagic(MAGIC, UPG_MAGIC);
     }
 
     @Override

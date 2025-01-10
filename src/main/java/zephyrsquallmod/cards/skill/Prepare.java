@@ -18,7 +18,7 @@ public class Prepare extends BaseCard {
             1
     );
 
-    private static final int BLOCK = 5;
+    private static final int BLOCK = 4;
     private static final int UPG_BLOCK = 3;
     private static final int MAGIC = 1;
 

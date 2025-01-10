@@ -12,17 +12,18 @@ public class Write extends BaseCard {
     private static final CardStats info = new CardStats(
             ZephyrSquallCharacter.Enums.CARD_COLOR,
             CardType.SKILL,
-            CardRarity.SPECIAL,
+            CardRarity.COMMON,
             CardTarget.SELF,
             1
     );
 
     private static final int MAGIC = 3;
+    private static final int UPG_MAGIC = 1;
 
     public Write() {
         super(ID, info);
 
-        setMagic(MAGIC);
+        setMagic(MAGIC, UPG_MAGIC);
         this.cardsToPreview = new Book();
     }
 
