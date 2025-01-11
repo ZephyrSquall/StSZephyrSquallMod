@@ -47,6 +47,11 @@
       "I can't play this card."
     ]
   },
+  "${modID}:Flurry": {
+    "NAME": "Flurry",
+    "DESCRIPTION": "Deal !D! damage double X times.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage triple X times."
+  },
   "${modID}:Focus": {
     "NAME": "Focus",
     "DESCRIPTION": "Discard any number of cards. Deal !D! damage per discarded card. NL zephyrsquallmod:Well_Read: Deals an additional !M! damage per discarded card."
