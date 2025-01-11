@@ -28,16 +28,16 @@ public class FocusAction extends AbstractGameAction {
     }
 
     public void update() {
-        addToBot(new SelectCardsInHandAction(Integer.MAX_VALUE, TEXT[0], true, true, card -> true, discardSelected));
+        addToTop(new SelectCardsInHandAction(Integer.MAX_VALUE, TEXT[0], true, true, card -> true, discardSelected));
         this.isDone = true;
     }
 
     Consumer<List<AbstractCard>> discardSelected = cards -> {
         for(AbstractCard card : cards) {
-            addToBot(new DiscardSpecificCardAction(card));
             int effectIndex = MathUtils.random(slashEffects.size() - 1);
             AttackEffect slashEffect = slashEffects.get(effectIndex);
-            addToBot(new DamageAction(this.target, new DamageInfo(this.source, this.damage, DamageInfo.DamageType.NORMAL), slashEffect));
+            addToTop(new DamageAction(this.target, new DamageInfo(this.source, this.damage, DamageInfo.DamageType.NORMAL), slashEffect));
+            addToTop(new DiscardSpecificCardAction(card));
         }
     };
  }

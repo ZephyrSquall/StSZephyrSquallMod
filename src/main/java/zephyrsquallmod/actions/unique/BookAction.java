@@ -18,7 +18,7 @@ public class BookAction extends AbstractGameAction {
     private final Predicate<AbstractCard> isRecordedCard = card -> this.recordedCards.contains(card);
 
     public void update() {
-        addToBot(new FetchAction(AbstractDungeon.player.exhaustPile, isRecordedCard, Integer.MAX_VALUE));
+        addToTop(new FetchAction(AbstractDungeon.player.exhaustPile, isRecordedCard, Integer.MAX_VALUE));
         this.isDone = true;
     }
 }

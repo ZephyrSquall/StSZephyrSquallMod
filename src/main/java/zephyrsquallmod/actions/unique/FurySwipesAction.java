@@ -12,19 +12,19 @@ public class FurySwipesAction extends AbstractGameAction {
     public void update() {
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
             if (c.hasTag(AbstractCard.CardTags.STRIKE))
-                addToBot(new StreamlineSpecificCardAction(c));
+                addToTop(new StreamlineSpecificCardAction(c));
         }
         for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
             if (c.hasTag(AbstractCard.CardTags.STRIKE))
-                addToBot(new StreamlineSpecificCardAction(c));
+                addToTop(new StreamlineSpecificCardAction(c));
         }
         for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
             if (c.hasTag(AbstractCard.CardTags.STRIKE))
-                addToBot(new StreamlineSpecificCardAction(c));
+                addToTop(new StreamlineSpecificCardAction(c));
         }
         for (AbstractCard c : AbstractDungeon.player.exhaustPile.group) {
             if (c.hasTag(AbstractCard.CardTags.STRIKE))
-                addToBot(new StreamlineSpecificCardAction(c));
+                addToTop(new StreamlineSpecificCardAction(c));
         }
         this.isDone = true;
     }

@@ -24,13 +24,13 @@ public class StreamlineAction extends AbstractGameAction {
         if (AbstractDungeon.player.hand.group.stream().noneMatch(ZephyrSquallMod.canBeStreamlined))
             AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 3.0F, TEXT[1], true));
         else
-            addToBot(new SelectCardsInHandAction(TEXT[0], ZephyrSquallMod.canBeStreamlined, streamlineSelected));
+            addToTop(new SelectCardsInHandAction(TEXT[0], ZephyrSquallMod.canBeStreamlined, streamlineSelected));
         this.isDone = true;
     }
 
     Consumer<List<AbstractCard>> streamlineSelected = cards -> {
         for(AbstractCard card : cards) {
-            addToBot(new StreamlineSpecificCardAction(card));
+            addToTop(new StreamlineSpecificCardAction(card));
         }
     };
 }

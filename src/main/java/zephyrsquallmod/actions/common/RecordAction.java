@@ -34,15 +34,15 @@ public class RecordAction extends AbstractGameAction {
         if (AbstractDungeon.player.hand.group.isEmpty())
             AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 3.0F, TEXT[1], true));
         else
-            addToBot(new SelectCardsInHandAction(amount, TEXT[0], anyNumber, canPickZero, card -> true, recordSelected));
+            addToTop(new SelectCardsInHandAction(amount, TEXT[0], anyNumber, canPickZero, card -> true, recordSelected));
         this.isDone = true;
     }
 
     Consumer<List<AbstractCard>> recordSelected = cardsList -> {
         ArrayList<AbstractCard> cardsArrayList = new ArrayList<>(cardsList);
+        addToTop(new MakeTempCardInHandAction(new Book(cardsArrayList), false, true));
         for (AbstractCard card : cardsArrayList) {
-            addToBot(new ExhaustSpecificCardAction(card, AbstractDungeon.player.hand, true));
+            addToTop(new ExhaustSpecificCardAction(card, AbstractDungeon.player.hand, true));
         }
-        addToBot(new MakeTempCardInHandAction(new Book(cardsArrayList), false, true));
     };
 }

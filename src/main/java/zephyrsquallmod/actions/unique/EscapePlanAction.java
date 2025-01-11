@@ -21,7 +21,7 @@ public class EscapePlanAction extends AbstractGameAction {
 
     public void update() {
         if (this.target.getIntentBaseDmg() >= 0) {
-            addToBot(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, block));
+            addToTop(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, block));
         } else {
             AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 3.0F, TEXT[0], true));
         }
