@@ -5,10 +5,12 @@ import basemod.BaseMod;
 import basemod.interfaces.*;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import zephyrsquallmod.cards.BaseCard;
 import zephyrsquallmod.character.ZephyrSquallCharacter;
+import zephyrsquallmod.powers.OneWithTheWindPower;
 import zephyrsquallmod.relics.BaseRelic;
 import zephyrsquallmod.util.GeneralUtils;
 import zephyrsquallmod.util.KeywordInfo;
@@ -40,7 +42,8 @@ public class ZephyrSquallMod implements
         EditKeywordsSubscriber,
         PostInitializeSubscriber,
         OnStartBattleSubscriber,
-        OnPlayerTurnStartSubscriber {
+        OnPlayerTurnStartSubscriber,
+        OnPlayerLoseBlockSubscriber {
     public static ModInfo info;
     public static String modID; //Edit your pom.xml to change this
     static { loadModInfo(); }
@@ -265,5 +268,13 @@ public class ZephyrSquallMod implements
         isTailwindExtraTurn = false;
         isStartingTailwindExtraTurn = false;
         tailwindGained = 0;
+    }
+
+    @Override
+    public int receiveOnPlayerLoseBlock(int amount) {
+        if (AbstractDungeon.player.hasPower(OneWithTheWindPower.POWER_ID) && isTailwindExtraTurn) {
+            return 0;
+        }
+        return amount;
     }
 }
