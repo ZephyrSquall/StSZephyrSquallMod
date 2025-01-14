@@ -4,7 +4,7 @@
     "DESCRIPTION": "Draw 1 card for each time you have attacked this turn.",
     "UPGRADE_DESCRIPTION": "Draw 1 card. NL Draw 1 additional card for each time you have attacked this turn.",
     "EXTENDED_DESCRIPTION": [
-      " NL (Attacked !M! times.)"
+      "{@@} NL (Attacked !M! time{!M!|@=s|1=}.)"
     ]
   },
   "${modID}:Book": {
@@ -31,8 +31,7 @@
   },
   "${modID}:Contemplate": {
     "NAME": "Contemplate",
-    "DESCRIPTION": "At the start of your turn, draw !M! additional card.",
-    "UPGRADE_DESCRIPTION": "At the start of your turn, draw !M! additional cards."
+    "DESCRIPTION": "{@@}At the start of your turn, draw !M! additional card{!M!|@=s|1=}."
   },
   "${modID}:Defend": {
     "NAME": "Defend",
@@ -49,8 +48,7 @@
   },
   "${modID}:FlashOfInspiration": {
     "NAME": "Flash of Inspiration",
-    "DESCRIPTION": "Unplayable. NL Whenever this card is drawn, zephyrsquallmod:Streamline !M! card at random.",
-    "UPGRADE_DESCRIPTION": "Unplayable. NL Whenever this card is drawn, zephyrsquallmod:Streamline !M! cards at random.",
+    "DESCRIPTION": "{@@}Unplayable. NL Whenever this card is drawn, zephyrsquallmod:Streamline !M! card{!M!|@=s|1=} at random.",
     "EXTENDED_DESCRIPTION": [
       "I can't play this card."
     ]
@@ -83,7 +81,7 @@
   },
   "${modID}:Prepare": {
     "NAME": "Prepare",
-    "DESCRIPTION": "Gain !B! Block. NL zephyrsquallmod:Streamline !M! card."
+    "DESCRIPTION": "{@@}Gain !B! Block. NL zephyrsquallmod:Streamline !M! card{!M!|@=s|1=}."
   },
   "${modID}:PressureSystem": {
     "NAME": "Pressure System",
@@ -95,11 +93,11 @@
   },
   "${modID}:Study": {
     "NAME": "Study",
-    "DESCRIPTION": "Draw !M! cards."
+    "DESCRIPTION": "{@@}Draw !M! card{!M!|@=s|1=}."
   },
   "${modID}:SwiftStrike": {
     "NAME": "Swift Strike",
-    "DESCRIPTION": "Deal !D! damage. NL If this card costs 0, draw !M! card and zephyrsquallmod:Streamline !M! card."
+    "DESCRIPTION": "{@@}Deal !D! damage. NL If this card costs 0, draw !M! card{!M!|@=s|1=} and zephyrsquallmod:Streamline !M! card{!M!|@=s|1=}."
   },
   "${modID}:Swirl": {
     "NAME": "Swirl",
@@ -107,14 +105,14 @@
   },
   "${modID}:TomeSmack": {
     "NAME": "Tome Smack",
-    "DESCRIPTION": "zephyrsquallmod:Record !M! card. NL Deal !D! damage."
+    "DESCRIPTION": "{@@}zephyrsquallmod:Record !M! card{!M!|@=s|1=}. NL Deal !D! damage."
   },
   "${modID}:Tornado": {
     "NAME": "Tornado",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies !M! times. NL If it is an extra turn created by zephyrsquallmod:Tailwind, deals damage !M! additional times."
+    "DESCRIPTION": "{@@}Deal !D! damage to ALL enemies !M! time{!M!|@=s|1=}. NL If it is an extra turn created by zephyrsquallmod:Tailwind, deals damage !M! additional time{!M!|@=s|1=}."
   },
   "${modID}:Write": {
     "NAME": "Write",
-    "DESCRIPTION": "zephyrsquallmod:Record up to !M! cards."
+    "DESCRIPTION": "{@@}zephyrsquallmod:Record up to !M! card{!M!|@=s|1=}."
   }
 }
