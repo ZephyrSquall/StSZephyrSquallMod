@@ -70,6 +70,10 @@
     "NAME": "Gust",
     "DESCRIPTION": "Deal !D! damage. NL Deals additional damage equal to zephyrsquallmod:Tailwind gained this combat."
   },
+  "${modID}:LightReading": {
+    "NAME": "Light Reading",
+    "DESCRIPTION": "{@@}zephyrsquallmod:Well_Read bonus effects occur with !M! fewer card{!M!|@=s|1=} in your hand."
+  },
   "${modID}:MindMap": {
     "NAME": "Mind Map",
     "DESCRIPTION": "The first time you try to draw a card while your hand is full each turn, play the top card of your draw pile."

@@ -6,10 +6,12 @@ import basemod.interfaces.*;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import zephyrsquallmod.cards.BaseCard;
 import zephyrsquallmod.character.ZephyrSquallCharacter;
+import zephyrsquallmod.powers.LightReadingPower;
 import zephyrsquallmod.powers.OneWithTheWindPower;
 import zephyrsquallmod.relics.BaseRelic;
 import zephyrsquallmod.util.GeneralUtils;
@@ -256,6 +258,16 @@ public class ZephyrSquallMod implements
     public static int tailwindGained = 0;
     public static boolean hasAttemptedDrawWithFullHandThisTurn = false;
     public static int timesAttackedThisTurn = 0;
+
+    public static boolean isWellRead() {
+        int cardThreshold = BaseMod.MAX_HAND_SIZE;
+        for(AbstractPower power : AbstractDungeon.player.powers) {
+            if (power.ID.equals(LightReadingPower.POWER_ID)) {
+                cardThreshold -= power.amount;
+            }
+        }
+        return AbstractDungeon.player.hand.size() >= cardThreshold;
+    }
 
     @Override
     public void receiveOnPlayerTurnStart() {

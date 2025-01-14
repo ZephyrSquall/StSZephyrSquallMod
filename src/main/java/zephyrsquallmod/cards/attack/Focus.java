@@ -1,10 +1,9 @@
 package zephyrsquallmod.cards.attack;
 
-import basemod.BaseMod;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import zephyrsquallmod.ZephyrSquallMod;
 import zephyrsquallmod.actions.unique.FocusAction;
 import zephyrsquallmod.cards.BaseCard;
 import zephyrsquallmod.character.ZephyrSquallCharacter;
@@ -32,12 +31,12 @@ public class Focus extends BaseCard {
     }
 
     public void triggerOnGlowCheck() {
-        this.glowColor = (AbstractDungeon.player.hand.size() == BaseMod.MAX_HAND_SIZE) ? AbstractCard.GOLD_BORDER_GLOW_COLOR : AbstractCard.BLUE_BORDER_GLOW_COLOR;
+        this.glowColor = (ZephyrSquallMod.isWellRead()) ? AbstractCard.GOLD_BORDER_GLOW_COLOR : AbstractCard.BLUE_BORDER_GLOW_COLOR;
     }
 
     public void applyPowers() {
         int realBaseDamage = this.baseDamage;
-        if (AbstractDungeon.player.hand.size() == BaseMod.MAX_HAND_SIZE)
+        if (ZephyrSquallMod.isWellRead())
             this.baseDamage+= magicNumber;
         super.applyPowers();
         this.baseDamage = realBaseDamage;
@@ -46,7 +45,7 @@ public class Focus extends BaseCard {
 
     public void calculateCardDamage(AbstractMonster mo) {
         int realBaseDamage = this.baseDamage;
-        if (AbstractDungeon.player.hand.size() == BaseMod.MAX_HAND_SIZE)
+        if (ZephyrSquallMod.isWellRead())
             this.baseDamage+= magicNumber;
         super.calculateCardDamage(mo);
         this.baseDamage = realBaseDamage;
