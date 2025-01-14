@@ -255,6 +255,7 @@ public class ZephyrSquallMod implements
     public static boolean isStartingTailwindExtraTurn = false;
     public static int tailwindGained = 0;
     public static boolean hasAttemptedDrawWithFullHandThisTurn = false;
+    public static int timesAttackedThisTurn = 0;
 
     @Override
     public void receiveOnPlayerTurnStart() {
@@ -262,12 +263,14 @@ public class ZephyrSquallMod implements
             isTailwindExtraTurn = false;
         isStartingTailwindExtraTurn = false;
         hasAttemptedDrawWithFullHandThisTurn = false;
+        timesAttackedThisTurn = 0;
     }
     @Override
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
         isTailwindExtraTurn = false;
         isStartingTailwindExtraTurn = false;
         tailwindGained = 0;
+        timesAttackedThisTurn = 0;
     }
 
     @Override

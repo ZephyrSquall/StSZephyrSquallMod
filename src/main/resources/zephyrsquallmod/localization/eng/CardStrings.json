@@ -1,4 +1,12 @@
 {
+  "${modID}:Assessment": {
+    "NAME": "Assessment",
+    "DESCRIPTION": "Draw 1 card for each time you have attacked this turn.",
+    "UPGRADE_DESCRIPTION": "Draw 1 card. NL Draw 1 additional card for each time you have attacked this turn.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Attacked !M! times.)"
+    ]
+  },
   "${modID}:Book": {
     "NAME": "Book",
     "DESCRIPTION": "Retain. NL Return the zephyrsquallmod:Recorded cards to your hand. NL Exhaust.",
