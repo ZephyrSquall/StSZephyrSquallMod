@@ -1,8 +1,8 @@
-package zephyrsquallmod.patches;
+package zephyrsquallmod.patches.attackcounting;
 
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
-import com.megacrit.cardcrawl.actions.common.PummelDamageAction;
+import com.megacrit.cardcrawl.actions.unique.RipAndTearAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -10,11 +10,12 @@ import javassist.CannotCompileException;
 import javassist.CtBehavior;
 import zephyrsquallmod.ZephyrSquallMod;
 
+// RipAndTearAction recursively calls itself a second time, so only add to the count once per call.
 @SpirePatch2(
-        clz = PummelDamageAction.class,
+        clz = RipAndTearAction.class,
         method = "update"
 )
-public class PummelDamageActionPatch {
+public class RipAndTearActionPatch {
 
     @SpireInsertPatch(
             locator = Locator.class,
