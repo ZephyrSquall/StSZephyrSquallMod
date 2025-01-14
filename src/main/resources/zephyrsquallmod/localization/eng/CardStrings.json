@@ -72,7 +72,7 @@
   },
   "${modID}:LightReading": {
     "NAME": "Light Reading",
-    "DESCRIPTION": "{@@}zephyrsquallmod:Well_Read bonus effects occur with !M! fewer card{!M!|@=s|1=} in your hand."
+    "DESCRIPTION": "{@@}zephyrsquallmod:Well_Read bonus effects occur with !M! less card{!M!|@=s|1=} in your hand."
   },
   "${modID}:MindMap": {
     "NAME": "Mind Map",
@@ -94,6 +94,10 @@
   "${modID}:QuickThinking": {
     "NAME": "Quick Thinking",
     "DESCRIPTION": "{@@}Gain !B! Block. NL Whenever you draw this card, draw !M! additional card{!M!|@=s|1=}."
+  },
+  "${modID}:SecretPassage": {
+    "NAME": "Secret Passage",
+    "DESCRIPTION": "Gain !M! Intangible. NL Draw 5 less cards next turn. NL zephyrsquallmod:Well_Read: zephyrsquallmod:Record up to 2 cards."
   },
   "${modID}:Strike": {
     "NAME": "Strike",

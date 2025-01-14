@@ -1,4 +1,12 @@
 {
+  "${modID}:DrawDown": {
+    "NAME": "Draw Down",
+    "DESCRIPTIONS": [
+      "Draw #b",
+      " less card next turn.",
+      " less cards next turn."
+    ]
+  },
   "${modID}:LightReading": {
     "NAME": "Light Reading",
     "DESCRIPTIONS": [
