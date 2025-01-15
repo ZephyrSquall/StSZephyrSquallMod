@@ -5,11 +5,13 @@ import basemod.BaseMod;
 import basemod.interfaces.*;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import zephyrsquallmod.cards.BaseCard;
+import zephyrsquallmod.cards.attack.PlanOfAttack;
 import zephyrsquallmod.character.ZephyrSquallCharacter;
 import zephyrsquallmod.powers.LightReadingPower;
 import zephyrsquallmod.powers.OneWithTheWindPower;
@@ -267,6 +269,22 @@ public class ZephyrSquallMod implements
             }
         }
         return AbstractDungeon.player.hand.size() >= cardThreshold;
+    }
+
+    public static float addPlanOfAttackDamage(float damage, DamageInfo.DamageType type, String cardID) {
+        if (type == DamageInfo.DamageType.NORMAL) {
+            int planOfAttacksInHand = 0;
+            for (AbstractCard card : AbstractDungeon.player.hand.group) {
+                if (card.cardID.equals(PlanOfAttack.ID)) {
+                    planOfAttacksInHand++;
+                }
+            }
+            if (cardID.equals(PlanOfAttack.ID)) {
+                planOfAttacksInHand--;
+            }
+            return damage + planOfAttacksInHand;
+        }
+        return damage;
     }
 
     @Override
