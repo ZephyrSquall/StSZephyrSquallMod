@@ -4,8 +4,11 @@ import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.interfaces.*;
 import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
@@ -14,6 +17,7 @@ import zephyrsquallmod.cards.BaseCard;
 import zephyrsquallmod.cards.attack.PlanOfAttack;
 import zephyrsquallmod.character.ZephyrSquallCharacter;
 import zephyrsquallmod.powers.LightReadingPower;
+import zephyrsquallmod.powers.MaelstromPower;
 import zephyrsquallmod.powers.OneWithTheWindPower;
 import zephyrsquallmod.relics.BaseRelic;
 import zephyrsquallmod.util.GeneralUtils;
@@ -285,6 +289,23 @@ public class ZephyrSquallMod implements
             return damage + planOfAttacksInHand;
         }
         return damage;
+    }
+
+    // This is intended to be like the onAttack hook that powers have, with the difference that it is only called once
+    // per hit for attacks that hit every enemy, rather than once per hit per enemy. This assumes that other mods will only have Attacks
+    public static void onIndividualAttack(AbstractCreature source, DamageInfo.DamageType type) {
+        if (source == AbstractDungeon.player && type == DamageInfo.DamageType.NORMAL) {
+            // Keep track of attacks made for Assessment.
+            timesAttackedThisTurn++;
+
+            // Damage all enemies if the player has the Maelstrom power.
+            for (AbstractPower power : AbstractDungeon.player.powers) {
+                if (power.ID.equals(MaelstromPower.POWER_ID)) {
+                    power.flash();
+                    AbstractDungeon.actionManager.addToTop(new DamageAllEnemiesAction(power.owner, DamageInfo.createDamageMatrix(power.amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.NONE, true));
+                }
+            }
+        }
     }
 
     @Override

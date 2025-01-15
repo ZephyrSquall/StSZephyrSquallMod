@@ -5,6 +5,7 @@ import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
 import zephyrsquallmod.ZephyrSquallMod;
@@ -23,12 +24,10 @@ public class DamageAllEnemiesActionPatch {
 
     @SpireInsertPatch(
             locator = Locator.class,
-            localvars = {"damageType"}
+            localvars = {"source", "damageType"}
     )
-    public static void countAttack(DamageInfo.DamageType damageType) {
-        if (damageType == DamageInfo.DamageType.NORMAL) {
-            ZephyrSquallMod.timesAttackedThisTurn++;
-        }
+    public static void onIndividualAttack(AbstractCreature source, DamageInfo.DamageType damageType) {
+        ZephyrSquallMod.onIndividualAttack(source, damageType);
     }
 
     private static class Locator extends SpireInsertLocator {

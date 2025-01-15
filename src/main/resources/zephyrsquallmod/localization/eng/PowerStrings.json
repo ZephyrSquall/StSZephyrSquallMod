@@ -15,6 +15,13 @@
       "Well Read bonus effects always occur."
     ]
   },
+  "${modID}:Maelstrom": {
+    "NAME": "Maelstrom",
+    "DESCRIPTIONS": [
+      "Whenever you attack, deal #b",
+      " damage to ALL enemies."
+    ]
+  },
   "${modID}:MindMap": {
     "NAME": "Mind Map",
     "DESCRIPTIONS": [
