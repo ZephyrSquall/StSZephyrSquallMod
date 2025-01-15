@@ -95,6 +95,10 @@
     "NAME": "Quick Thinking",
     "DESCRIPTION": "{@@}Gain !B! Block. NL Whenever you draw this card, draw !M! additional card{!M!|@=s|1=}."
   },
+  "${modID}:ReadAhead": {
+    "NAME": "Read Ahead",
+    "DESCRIPTION": "{@@}zephyrsquallmod:Record the top !M! card{!M!|@=s|1=} of your draw pile."
+  },
   "${modID}:SecretPassage": {
     "NAME": "Secret Passage",
     "DESCRIPTION": "Gain !M! Intangible. NL Draw 5 less cards next turn. NL zephyrsquallmod:Well_Read: zephyrsquallmod:Record up to 2 cards."

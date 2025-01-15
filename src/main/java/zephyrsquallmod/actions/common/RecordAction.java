@@ -2,14 +2,11 @@ package zephyrsquallmod.actions.common;
 
 import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsInHandAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
-import zephyrsquallmod.cards.skill.Book;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,9 +37,6 @@ public class RecordAction extends AbstractGameAction {
 
     Consumer<List<AbstractCard>> recordSelected = cardsList -> {
         ArrayList<AbstractCard> cardsArrayList = new ArrayList<>(cardsList);
-        addToTop(new MakeTempCardInHandAction(new Book(cardsArrayList), false, true));
-        for (AbstractCard card : cardsArrayList) {
-            addToTop(new ExhaustSpecificCardAction(card, AbstractDungeon.player.hand, true));
-        }
+        addToTop(new RecordSpecificCardsAction(cardsArrayList, AbstractDungeon.player.hand));
     };
 }
