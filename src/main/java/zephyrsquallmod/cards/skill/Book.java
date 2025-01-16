@@ -20,8 +20,9 @@ public class Book extends BaseCard {
             1
     );
 
+    private static final int UPG_COST = 0;
     private boolean hasRecordedCards = false;
-    private final ArrayList<AbstractCard> recordedCards;
+    public ArrayList<AbstractCard> recordedCards;
 
     public Book() {
         super(ID, info);
@@ -36,6 +37,8 @@ public class Book extends BaseCard {
 
         this.selfRetain = true;
         this.exhaust = true;
+        this.setCostUpgrade(UPG_COST);
+
         this.hasRecordedCards = true;
         this.recordedCards = recordedCards;
         this.updateDescription();

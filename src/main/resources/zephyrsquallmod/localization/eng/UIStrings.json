@@ -1,4 +1,9 @@
 {
+  "${modID}:PlagiarizeAction": {
+    "TEXT": [
+      "Copy"
+    ]
+  },
   "${modID}:RecordAction": {
     "TEXT": [
       "Record",

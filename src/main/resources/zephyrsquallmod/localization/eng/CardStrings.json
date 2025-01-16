@@ -87,6 +87,10 @@
     "DESCRIPTION": "Block is not removed at the start of extra turns created by zephyrsquallmod:Tailwind.",
     "UPGRADE_DESCRIPTION": "Block is not removed at the start of extra turns created by zephyrsquallmod:Tailwind. NL Gain !M! zephyrsquallmod:Tailwind."
   },
+  "${modID}:Plagiarize": {
+    "NAME": "Plagiarize",
+    "DESCRIPTION": "{@@}Choose a Book. Add {!M!|@=!M! copies|1=a copy} of that Book into your hand. The zephyrsquallmod:Recorded cards are also copied."
+  },
   "${modID}:PlanOfAttack": {
     "NAME": "Plan of Attack",
     "DESCRIPTION": "Deal !D! damage 2 times. NL While in hand, your other Attacks deal 1 additional damage."
