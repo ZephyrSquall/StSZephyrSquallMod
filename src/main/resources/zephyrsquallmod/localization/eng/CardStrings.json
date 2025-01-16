@@ -115,6 +115,11 @@
     "NAME": "Secret Passage",
     "DESCRIPTION": "Gain !M! Intangible. NL Draw 5 less cards next turn. NL zephyrsquallmod:Well_Read: zephyrsquallmod:Record up to 2 cards."
   },
+  "${modID}:StormBrewing": {
+    "NAME": "Storm Brewing",
+    "DESCRIPTION": "Gain !M! zephyrsquallmod:Tailwind. NL Permanently increase this card's zephyrsquallmod:Tailwind by 1, to a maximum of 9. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! zephyrsquallmod:Tailwind. NL Permanently increase this card's zephyrsquallmod:Tailwind by 1. NL Exhaust."
+  },
   "${modID}:Strike": {
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage."
