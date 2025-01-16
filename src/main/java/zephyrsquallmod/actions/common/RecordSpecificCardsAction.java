@@ -19,6 +19,8 @@ public class RecordSpecificCardsAction extends AbstractGameAction {
     }
 
     public void update() {
+        // Make sure Books aren't recorded again by removing any books from the group.
+        cards.removeIf(card -> card.cardID.equals(Book.ID));
         addToTop(new MakeTempCardInHandAction(new Book(cards), false, true));
         for (AbstractCard card : cards) {
             addToTop(new ExhaustSpecificCardAction(card, group, true));

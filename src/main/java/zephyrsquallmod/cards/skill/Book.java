@@ -29,7 +29,8 @@ public class Book extends BaseCard {
 
         this.selfRetain = true;
         this.exhaust = true;
-        this.recordedCards = null;
+        this.setCostUpgrade(UPG_COST);
+        this.recordedCards = new ArrayList<>();
     }
 
     public Book(ArrayList<AbstractCard> recordedCards) {
@@ -71,12 +72,17 @@ public class Book extends BaseCard {
                 if (i < this.recordedCards.size() - 2)
                     description.append(cardStrings.EXTENDED_DESCRIPTION[1]);
                 else if (i == this.recordedCards.size() - 2)
-                    description.append(cardStrings.EXTENDED_DESCRIPTION[2]);
+                    // Use the Oxford comma if there are more than 2 recorded cards, don't use it if there are exactly 2
+                    // recorded cards.
+                    if (this.recordedCards.size() == 2)
+                        description.append(cardStrings.EXTENDED_DESCRIPTION[3]);
+                    else
+                        description.append(cardStrings.EXTENDED_DESCRIPTION[2]);
             }
-            description.append(cardStrings.EXTENDED_DESCRIPTION[3]);
+            description.append(cardStrings.EXTENDED_DESCRIPTION[4]);
             this.rawDescription = description.toString();
         } else {
-            this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[4];
+            this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[5];
         }
         initializeDescription();
     }

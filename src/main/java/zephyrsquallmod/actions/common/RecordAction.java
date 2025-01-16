@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
+import zephyrsquallmod.cards.skill.Book;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,10 +29,16 @@ public class RecordAction extends AbstractGameAction {
     }
 
     public void update() {
-        if (AbstractDungeon.player.hand.group.isEmpty())
+        int recordableCards = AbstractDungeon.player.hand.size();
+        for (AbstractCard card : AbstractDungeon.player.hand.group) {
+            if (card.cardID.equals(Book.ID)) {
+                recordableCards--;
+            }
+        }
+        if (recordableCards == 0)
             AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 3.0F, TEXT[1], true));
         else
-            addToTop(new SelectCardsInHandAction(amount, TEXT[0], anyNumber, canPickZero, card -> true, recordSelected));
+            addToTop(new SelectCardsInHandAction(amount, TEXT[0], anyNumber, canPickZero, card -> !card.cardID.equals(Book.ID), recordSelected));
         this.isDone = true;
     }
 

@@ -38,8 +38,6 @@ public class PlagiarizeAction extends AbstractGameAction {
                     // Cast the AbstractCard to a Book to use its recordedCards field.
                     Book book = (Book) card;
                     ArrayList<AbstractCard> originalRecordedCards = book.recordedCards;
-                    if (originalRecordedCards == null)
-                        originalRecordedCards = new ArrayList<>();
                     ArrayList<AbstractCard> copiedRecordedCards = new ArrayList<>(book.recordedCards.size());
 
                     for (AbstractCard originalRecordedCard : originalRecordedCards) {
