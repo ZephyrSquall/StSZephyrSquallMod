@@ -1,17 +1,14 @@
-package zephyrsquallmod.patches;
+package zephyrsquallmod.patches.overdraw;
 
+import basemod.BaseMod;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.PlayTopCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
 import zephyrsquallmod.ZephyrSquallMod;
-
-import static zephyrsquallmod.ZephyrSquallMod.makeID;
 
 // Drawing cards is also done by the FastDrawCardAction, ScrapeAction, and PathVictoryAction (judging by them being
 // affected by the No Draw power). However, all of these actions have no usages by any cards, suggesting they're all
@@ -27,29 +24,22 @@ import static zephyrsquallmod.ZephyrSquallMod.makeID;
         clz = DrawCardAction.class,
         method = "update"
 )
-public class MindMapPatch {
+public class HandIsFullDialogFirstPatch {
 
     @SpireInsertPatch(
-            locator = Locator.class
+            locator = Locator.class,
+            localvars = {"amount"}
     )
-    public static void checkMindMap() {
-        if (!ZephyrSquallMod.hasAttemptedDrawWithFullHandThisTurn) {
-            ZephyrSquallMod.hasAttemptedDrawWithFullHandThisTurn = true;
-            if (AbstractDungeon.player.hasPower(makeID("MindMap"))) {
-                AbstractPower mindMapPower = AbstractDungeon.player.getPower(makeID("MindMap"));
-                mindMapPower.flash();
-                for (int i = 0; i < mindMapPower.amount; i++) {
-                    AbstractDungeon.actionManager.addToTop(new PlayTopCardAction(AbstractDungeon.getCurrRoom().monsters.getRandomMonster(null, true, AbstractDungeon.cardRandomRng),false));
-                }
-            }
-        }
+    public static void checkOverdraw(int amount) {
+        int cardsOverdrawn = amount + AbstractDungeon.player.hand.size() - BaseMod.MAX_HAND_SIZE;
+        ZephyrSquallMod.onOverdraw(cardsOverdrawn);
     }
 
     private static class Locator extends SpireInsertLocator {
         @Override
         public int[] Locate(CtBehavior ctMethodToPatch) throws PatchingException, CannotCompileException {
             Matcher finalMatcher = new Matcher.MethodCallMatcher(AbstractPlayer.class, "createHandIsFullDialog");
-            return LineFinder.findAllInOrder(ctMethodToPatch, finalMatcher);
+            return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
         }
     }
 }

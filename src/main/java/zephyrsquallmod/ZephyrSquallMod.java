@@ -6,6 +6,8 @@ import basemod.interfaces.*;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
+import com.megacrit.cardcrawl.actions.common.PlayTopCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -262,7 +264,7 @@ public class ZephyrSquallMod implements
     // This variable is solely to make sure isTailwindExtraTurn isn't set back to false immediately upon the extra turn starting.
     public static boolean isStartingTailwindExtraTurn = false;
     public static int tailwindGained = 0;
-    public static boolean hasAttemptedDrawWithFullHandThisTurn = false;
+    public static boolean hasOverdrawnThisTurn = false;
     public static int timesAttackedThisTurn = 0;
 
     public static boolean isWellRead() {
@@ -302,7 +304,31 @@ public class ZephyrSquallMod implements
             for (AbstractPower power : AbstractDungeon.player.powers) {
                 if (power.ID.equals(MaelstromPower.POWER_ID)) {
                     power.flash();
-                    AbstractDungeon.actionManager.addToTop(new DamageAllEnemiesAction(power.owner, DamageInfo.createDamageMatrix(power.amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.NONE, true));
+                    AbstractDungeon.actionManager.addToTop(new DamageAllEnemiesAction(power.owner, DamageInfo.createDamageMatrix(power.amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
+                }
+            }
+        }
+    }
+
+    // This is called whenever the player attempts to draw more cards than their maximum hand size.
+    public static void onOverdraw(int cardsOverdrawn) {
+        // If the player has the Knowledge is Power power, deal its damage to a random enemy for each card overdrawn.
+        if (AbstractDungeon.player.hasPower(makeID("KnowledgeIsPower"))) {
+            AbstractPower power = AbstractDungeon.player.getPower(makeID("KnowledgeIsPower"));
+            power.flash();
+            for (int i = 0; i < cardsOverdrawn; i++) {
+                AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(power.owner, power.amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
+            }
+        }
+
+        // Track whether this is the first time the player has overdrawn this turn. If so, handle the Mind Map power.
+        if (!ZephyrSquallMod.hasOverdrawnThisTurn) {
+            ZephyrSquallMod.hasOverdrawnThisTurn = true;
+            if (AbstractDungeon.player.hasPower(makeID("MindMap"))) {
+                AbstractPower mindMapPower = AbstractDungeon.player.getPower(makeID("MindMap"));
+                mindMapPower.flash();
+                for (int i = 0; i < mindMapPower.amount; i++) {
+                    AbstractDungeon.actionManager.addToBottom(new PlayTopCardAction(AbstractDungeon.getCurrRoom().monsters.getRandomMonster(null, true, AbstractDungeon.cardRandomRng), false));
                 }
             }
         }
@@ -313,7 +339,7 @@ public class ZephyrSquallMod implements
         if (!isStartingTailwindExtraTurn)
             isTailwindExtraTurn = false;
         isStartingTailwindExtraTurn = false;
-        hasAttemptedDrawWithFullHandThisTurn = false;
+        hasOverdrawnThisTurn = false;
         timesAttackedThisTurn = 0;
     }
     @Override

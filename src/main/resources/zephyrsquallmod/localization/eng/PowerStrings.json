@@ -7,6 +7,13 @@
       " less cards next turn."
     ]
   },
+  "${modID}:KnowledgeIsPower": {
+    "NAME": "Knowledge is Power",
+    "DESCRIPTIONS": [
+      "Whenever you try to draw a card while your hand is full, deal #b",
+      " damage to a random enemy."
+    ]
+  },
   "${modID}:LightReading": {
     "NAME": "Light Reading",
     "DESCRIPTIONS": [
