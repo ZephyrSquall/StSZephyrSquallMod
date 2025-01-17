@@ -87,6 +87,10 @@
     "NAME": "Mind Map",
     "DESCRIPTION": "The first time you try to draw a card while your hand is full each turn, play the top card of your draw pile."
   },
+  "${modID}:Nexus": {
+    "NAME": "Nexus",
+    "DESCRIPTION": "{@@}Deal !D! damage !M! time{!M!|@=s|1=}. NL Increase the number of times ALL Nexus cards deal damage by 1 this combat."
+  },
   "${modID}:OneWithTheWind": {
     "NAME": "One With the Wind",
     "DESCRIPTION": "Block is not removed at the start of extra turns created by zephyrsquallmod:Tailwind.",
