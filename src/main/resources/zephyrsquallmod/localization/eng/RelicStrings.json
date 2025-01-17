@@ -1,4 +1,11 @@
 {
+  "${modID}:CursedTome": {
+    "NAME": "Cursed Tome",
+    "FLAVOR": "\"Why would I want to know anything else...\"",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. Skip every third card you would draw."
+    ]
+  },
   "${modID}:FieldJournal": {
     "NAME": "Field Journal",
     "FLAVOR": "\"Let's see what mysteries this Spire holds.\"",
