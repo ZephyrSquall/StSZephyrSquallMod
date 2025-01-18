@@ -21,7 +21,7 @@ public class Book extends BaseCard {
     );
 
     private static final int UPG_COST = 0;
-    private boolean hasRecordedCards = false;
+    public boolean hasRecordedCards = false;
     public ArrayList<AbstractCard> recordedCards;
 
     public Book() {
@@ -85,6 +85,11 @@ public class Book extends BaseCard {
             this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[5];
         }
         initializeDescription();
+    }
+
+    @Override
+    public void hover() {
+        super.hover();
     }
 
     @Override
