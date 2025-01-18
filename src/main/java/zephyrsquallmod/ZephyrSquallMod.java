@@ -4,6 +4,7 @@ import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.interfaces.*;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
@@ -332,6 +333,18 @@ public class ZephyrSquallMod implements
                 }
             }
         }
+    }
+
+    // Zephyr's Attack's often consist of many hits in a row, which use slashing effects to imply that Zephyr is using
+    // his claws and teeth to attack. To keep these effects interesting, this function will produce a random slash
+    // effect each time so these attacks don't use the same slash direction for every individual hit. The heavy slash
+    // effect is omitted as having this effect occur in a string of otherwise weak slash hits is jarring. This is a
+    // purely cosmetic random effect, so it uses Java's own random function to avoid progressing any of Slay the Spire's
+    // RNG seeds.
+    private static final ArrayList<AbstractGameAction.AttackEffect> slashEffects = new ArrayList<>( Arrays.asList(AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, AbstractGameAction.AttackEffect.SLASH_VERTICAL, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+    public static AbstractGameAction.AttackEffect getRandomSlashEffect() {
+        int effectIndex = MathUtils.random(slashEffects.size() - 1);
+        return slashEffects.get(effectIndex);
     }
 
     @Override

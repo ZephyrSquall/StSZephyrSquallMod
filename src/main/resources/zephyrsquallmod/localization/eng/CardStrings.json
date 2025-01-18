@@ -96,6 +96,10 @@
     "DESCRIPTION": "Block is not removed at the start of extra turns created by zephyrsquallmod:Tailwind.",
     "UPGRADE_DESCRIPTION": "Block is not removed at the start of extra turns created by zephyrsquallmod:Tailwind. NL Gain !M! zephyrsquallmod:Tailwind."
   },
+  "${modID}:PaperCuts": {
+    "NAME": "Paper Cuts",
+    "DESCRIPTION": "{@@}Deal !D! damage !M! time{!M!|@=s|1=}. NL Exhaust."
+  },
   "${modID}:Plagiarize": {
     "NAME": "Plagiarize",
     "DESCRIPTION": "{@@}Choose a Book. Add {!M!|@=!M! copies|1=a copy} of that Book into your hand. The zephyrsquallmod:Recorded cards are also copied."
