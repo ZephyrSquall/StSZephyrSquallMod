@@ -22,7 +22,7 @@ public class RecordSpecificCardsAction extends AbstractGameAction {
     public void update() {
         // Make sure Books aren't recorded again by removing any books from the group.
         cards.removeIf(card -> card.cardID.equals(Book.ID));
-        addToTop(new MakeTempCardInHandAction(new Book(cards), false, true));
+        addToTop(new MakeTempCardInHandAction(new Book(cards, true), false, true));
         for (AbstractCard card : cards) {
             // What follows is a direct copy-paste of the resetCardBeforeMoving method on the cardGroup class. Ideally
             // I'd call this method directly, but I can't because it's private. Normally calling the method directly

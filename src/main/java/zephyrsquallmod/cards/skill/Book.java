@@ -21,6 +21,7 @@ public class Book extends BaseCard {
 
     private static final int UPG_COST = 0;
     public boolean hasRecordedCards = false;
+    private boolean recordedCardsHaveSameUUID = false;
     public ArrayList<AbstractCard> recordedCards;
 
     public Book() {
@@ -33,6 +34,10 @@ public class Book extends BaseCard {
     }
 
     public Book(ArrayList<AbstractCard> recordedCards) {
+        this(recordedCards, false);
+    }
+
+    public Book(ArrayList<AbstractCard> recordedCards, boolean recordedCardsHaveSameUUID) {
         super(ID, info);
 
         this.selfRetain = true;
@@ -40,6 +45,7 @@ public class Book extends BaseCard {
         this.setCostUpgrade(UPG_COST);
 
         this.hasRecordedCards = true;
+        this.recordedCardsHaveSameUUID = recordedCardsHaveSameUUID;
         this.recordedCards = recordedCards;
         this.updateDescription();
     }
@@ -82,12 +88,22 @@ public class Book extends BaseCard {
     @Override
     public AbstractCard makeCopy() {
         if (this.hasRecordedCards) {
-            ArrayList<AbstractCard> copiedRecordedCards = new ArrayList<>(this.recordedCards.size());
-            for (AbstractCard originalRecordedCard : this.recordedCards) {
-                AbstractCard copiedRecordedCard = originalRecordedCard.makeStatEquivalentCopy();
-                copiedRecordedCards.add(copiedRecordedCard);
+            if (this.recordedCardsHaveSameUUID) {
+                // The initial Book, created in RecordSpecificCardsAction, is created by a MakeTempCardInHandAction.
+                // This latter action always makes a copy of the card. Under this specific circumstance, the Recorded
+                // cards should not be copied, so cards like Genetic Algorithm and Storm Brewing retain their UUID. In
+                // all other cases, the Recorded cards should be copied normally with different UUIDs, so cards like
+                // Genetic Algorithm and Storm Brewing don't have their values increased for any of the additional
+                // copies. So for the original Book, make the copy get its recordedCardsHaveSameUUID flag set to false.
+                return new Book(this.recordedCards);
+            } else {
+                ArrayList<AbstractCard> copiedRecordedCards = new ArrayList<>(this.recordedCards.size());
+                for (AbstractCard originalRecordedCard : this.recordedCards) {
+                    AbstractCard copiedRecordedCard = originalRecordedCard.makeStatEquivalentCopy();
+                    copiedRecordedCards.add(copiedRecordedCard);
+                }
+                return new Book(copiedRecordedCards);
             }
-            return new Book(copiedRecordedCards);
         } else {
             return new Book();
         }
