@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.Settings;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
 import zephyrsquallmod.cards.skill.Book;
@@ -32,6 +33,28 @@ public class RenderRecordedCardsPatch {
                 // individual card depending on its index and the total number of recorded cards.
                 float recordedCardsBase_x = thisBook.current_x;
                 float recordedCards_y = thisBook.current_y + (IMG_HEIGHT / 2.0F + IMG_HEIGHT / 2.0F * 0.8F + 16.0F) * thisBook.drawScale;
+
+                // If the card previews would go off the side of the screen, push the center point inwards just enough
+                // to keep all the card previews on screen.
+
+                // This line was originally
+                // ((thisBook.recordedCards.size() - 1.0F) / 2.0F) * (IMG_WIDTH * 0.8F + 16.0F) + IMG_WIDTH * 0.8F / 2.0F + 8.0F
+                // which finds the maximum card index, multiplies it by the width of preview cards including the buffer
+                // distance between cards, then adds another "half card" as the x position points to the center of the
+                // card but we want to compare the edge of the card with the screen boundary. This calculation
+                // mathematically simplifies to the following line.
+                float maximumOffset_x = (thisBook.recordedCards.size() / 2.0F) * (IMG_WIDTH * 0.8F + 16.0F);
+                if (recordedCardsBase_x + maximumOffset_x > Settings.WIDTH) {
+                    recordedCardsBase_x -= recordedCardsBase_x + maximumOffset_x - Settings.WIDTH;
+                } else if (recordedCardsBase_x - maximumOffset_x < 0) {
+                    recordedCardsBase_x -= recordedCardsBase_x - maximumOffset_x;
+                }
+
+                // If the Book's card previews would appear above the top of the screen, render them below the Book
+                // instead (ordinarily this can only happen if the Book is in the draw, discard, or exhaust pile).
+                if (recordedCards_y + (IMG_HEIGHT * 0.8F / 2.0F + 18.0F) > Settings.HEIGHT) {
+                    recordedCards_y = thisBook.current_y - (IMG_HEIGHT / 2.0F + IMG_HEIGHT / 2.0F * 0.8F + 16.0F) * thisBook.drawScale;
+                }
 
                 for (int i = 0; i < thisBook.recordedCards.size(); i++) {
                     AbstractCard recordedCardPreview = thisBook.recordedCards.get(i).makeStatEquivalentCopy();

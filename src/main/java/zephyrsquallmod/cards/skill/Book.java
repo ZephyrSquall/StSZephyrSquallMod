@@ -88,11 +88,6 @@ public class Book extends BaseCard {
     }
 
     @Override
-    public void hover() {
-        super.hover();
-    }
-
-    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if(this.hasRecordedCards) {
             addToBot(new BookAction(this.recordedCards));
