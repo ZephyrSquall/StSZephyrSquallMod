@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import zephyrsquallmod.cards.skill.Book;
+import zephyrsquallmod.relics.ResearchPaper;
 
 import java.util.ArrayList;
 
@@ -37,6 +38,11 @@ public class RecordSpecificCardsAction extends AbstractGameAction {
             card.stopGlowing();
             this.cardGroup.group.remove(card);
             // End of resetCardBeforeMoving method copy-paste.
+
+            if (card.type != AbstractCard.CardType.CURSE && card.type != AbstractCard.CardType.STATUS && AbstractDungeon.player.hasRelic(ResearchPaper.ID)) {
+                AbstractDungeon.player.getRelic(ResearchPaper.ID).flash();
+                card.upgrade();
+            }
         }
         this.isDone = true;
     }
