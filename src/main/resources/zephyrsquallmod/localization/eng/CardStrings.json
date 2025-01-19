@@ -102,7 +102,7 @@
   },
   "${modID}:Plagiarize": {
     "NAME": "Plagiarize",
-    "DESCRIPTION": "{@@}Choose a Book. Add {!M!|@=!M! copies|1=a copy} of that Book into your hand. The zephyrsquallmod:Recorded cards are also copied."
+    "DESCRIPTION": "{@@}Choose a Book. Add {!M!|@=!M! copies|1=a copy} of that Book into your hand."
   },
   "${modID}:PlanOfAttack": {
     "NAME": "Plan of Attack",

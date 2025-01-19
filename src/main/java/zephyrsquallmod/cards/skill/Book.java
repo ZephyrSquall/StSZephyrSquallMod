@@ -2,7 +2,6 @@ package zephyrsquallmod.cards.skill;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import zephyrsquallmod.actions.unique.BookAction;
 import zephyrsquallmod.cards.BaseCard;
@@ -45,23 +44,6 @@ public class Book extends BaseCard {
         this.updateDescription();
     }
 
-    public void applyPowers() {
-        // Check if a Recorded card has been removed from the exhaust pile by other means. If so, it is no longer
-        // Recorded (even if exhausted again before this Book is played).
-        ArrayList<AbstractCard> cardsToRemove = new ArrayList<>();
-        for (AbstractCard card : this.recordedCards) {
-            if (!AbstractDungeon.player.exhaustPile.contains(card))
-                cardsToRemove.add(card);
-        }
-        // Remove cards in a separate loop to prevent ConcurrentModificationException.
-        for (AbstractCard card : cardsToRemove)
-            this.recordedCards.remove(card);
-        if (this.recordedCards.isEmpty())
-            this.hasRecordedCards = false;
-        this.updateDescription();
-        super.applyPowers();
-    }
-
     private void updateDescription() {
         if (this.hasRecordedCards) {
             StringBuilder description = new StringBuilder(cardStrings.EXTENDED_DESCRIPTION[0]);
@@ -96,10 +78,16 @@ public class Book extends BaseCard {
         }
     }
 
+    // When a Book is copied, all of its Recorded cards are also copied.
     @Override
     public AbstractCard makeCopy() {
         if (this.hasRecordedCards) {
-            return new Book(this.recordedCards);
+            ArrayList<AbstractCard> copiedRecordedCards = new ArrayList<>(this.recordedCards.size());
+            for (AbstractCard originalRecordedCard : this.recordedCards) {
+                AbstractCard copiedRecordedCard = originalRecordedCard.makeStatEquivalentCopy();
+                copiedRecordedCards.add(copiedRecordedCard);
+            }
+            return new Book(copiedRecordedCards);
         } else {
             return new Book();
         }
