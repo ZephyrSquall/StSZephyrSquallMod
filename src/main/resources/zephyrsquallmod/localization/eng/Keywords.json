@@ -10,7 +10,8 @@
   {
     "PROPER_NAME": "Streamline",
     "NAMES": [
-      "streamline"
+      "streamline",
+      "streamlined"
     ],
     "DESCRIPTION": "Streamlined cards cost #b1 less [E] until played. Cards that cost #b0 cannot be Streamlined."
   },

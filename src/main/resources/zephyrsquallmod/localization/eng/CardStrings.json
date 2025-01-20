@@ -83,6 +83,13 @@
     "NAME": "Maelstrom",
     "DESCRIPTION": "Whenever you attack, deal !M! damage to ALL enemies."
   },
+  "${modID}:MagnumOpus": {
+    "NAME": "Magnum Opus",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies for each time this card has been zephyrsquallmod:Streamlined.",
+    "EXTENDED_DESCRIPTION": [
+      "{@@} NL (Streamlined !M! time{!M!|@=s|1=}.)"
+    ]
+  },
   "${modID}:MindMap": {
     "NAME": "Mind Map",
     "DESCRIPTION": "The first time you try to draw a card while your hand is full each turn, play the top card of your draw pile."

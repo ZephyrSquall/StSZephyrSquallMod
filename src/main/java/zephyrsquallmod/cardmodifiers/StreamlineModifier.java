@@ -11,7 +11,7 @@ import static basemod.helpers.CardModifierManager.removeSpecificModifier;
 import static zephyrsquallmod.ZephyrSquallMod.makeID;
 
 public class StreamlineModifier extends AbstractCardModifier {
-    private int totalReduction = 0;
+    public int totalReduction = 0;
     private boolean originallyModified = true;
     private int originalCost;
 
