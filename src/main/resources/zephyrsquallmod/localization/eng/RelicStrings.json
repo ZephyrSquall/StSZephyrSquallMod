@@ -1,4 +1,12 @@
 {
+  "${modID}:BrokenSpectacles": {
+    "NAME": "Broken Spectacles",
+    "FLAVOR": "They shattered protecting their previous wearer.",
+    "DESCRIPTIONS": [
+      "At the end of your turn, gain #b",
+      " #yBlock for each card in your hand."
+    ]
+  },
   "${modID}:CursedTome": {
     "NAME": "Cursed Tome",
     "FLAVOR": "\"Why would I want to know anything else...\"",
