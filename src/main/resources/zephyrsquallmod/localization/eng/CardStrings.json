@@ -140,6 +140,10 @@
     "NAME": "Read Ahead",
     "DESCRIPTION": "{@@}zephyrsquallmod:Record the top !M! card{!M!|@=s|1=} of your draw pile."
   },
+  "${modID}:Riposte": {
+    "NAME": "Riposte",
+    "DESCRIPTION": "Whenever you block an attack this turn, deal blocked damage back. NL zephyrsquallmod:Well_Read: Gain !B! Block."
+  },
   "${modID}:SecretPassage": {
     "NAME": "Secret Passage",
     "DESCRIPTION": "Gain !M! Intangible. NL Draw 5 less cards next turn. NL zephyrsquallmod:Well_Read: zephyrsquallmod:Record up to 2 cards."

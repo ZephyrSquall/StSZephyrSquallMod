@@ -66,6 +66,14 @@
       " #yTailwind."
     ]
   },
+  "${modID}:Riposte": {
+    "NAME": "Riposte",
+    "DESCRIPTIONS": [
+      "Whenever you block an attack this turn, deal blocked damage back.",
+      "Whenever you block an attack this turn, deal #b",
+      " times blocked damage back."
+    ]
+  },
   "${modID}:Tailwind": {
     "NAME": "Tailwind",
     "DESCRIPTIONS": [
