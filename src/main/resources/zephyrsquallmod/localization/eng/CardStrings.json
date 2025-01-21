@@ -180,5 +180,9 @@
   "${modID}:Write": {
     "NAME": "Write",
     "DESCRIPTION": "{@@}zephyrsquallmod:Record up to !M! card{!M!|@=s|1=}."
+  },
+  "${modID}:WindsFury": {
+    "NAME": "Wind's Fury",
+    "DESCRIPTION": "{@@}Your Attacks deal damage !M! additional time{!M!|@=s|1=}."
   }
 }

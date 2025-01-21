@@ -1,27 +1,26 @@
-package zephyrsquallmod.patches.attackcounting;
+package zephyrsquallmod.patches.attackcounting.callonindividualattack;
 
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
-import com.megacrit.cardcrawl.actions.unique.RipAndTearAction;
+import com.megacrit.cardcrawl.actions.unique.FeedAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
 import zephyrsquallmod.ZephyrSquallMod;
 
-// RipAndTearAction recursively calls itself a second time, so only add to the count once per call.
 @SpirePatch2(
-        clz = RipAndTearAction.class,
+        clz = FeedAction.class,
         method = "update"
 )
-public class RipAndTearActionPatch {
+public class FeedActionPatch {
 
     @SpireInsertPatch(
             locator = Locator.class,
-            localvars = {"info"}
+            localvars = {"target", "info"}
     )
-    public static void onIndividualAttack(DamageInfo info) {
-        ZephyrSquallMod.onIndividualAttack(info.owner, info.type);
+    public static void onIndividualAttack(AbstractCreature target, DamageInfo info) {
+        ZephyrSquallMod.onIndividualAttack(info.owner, target, info.type, new int[]{info.base});
     }
 
     private static class Locator extends SpireInsertLocator {

@@ -1,32 +1,30 @@
-package zephyrsquallmod.patches.attackcounting;
+package zephyrsquallmod.patches.attackcounting.resetnewattackcard;
 
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
-import com.megacrit.cardcrawl.actions.watcher.FlickerAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
 import zephyrsquallmod.ZephyrSquallMod;
 
 @SpirePatch2(
-        clz = FlickerAction.class,
+        clz = UseCardAction.class,
         method = "update"
 )
-public class FlickerActionPatch {
+public class UseCardActionPatch {
 
     @SpireInsertPatch(
-            locator = Locator.class,
-            localvars = {"info"}
+            locator = Locator.class
     )
-    public static void onIndividualAttack(DamageInfo info) {
-        ZephyrSquallMod.onIndividualAttack(info.owner, info.type);
+    public static void resetNewAttackCard() {
+        ZephyrSquallMod.newAttackCard = true;
     }
 
     private static class Locator extends SpireInsertLocator {
         @Override
         public int[] Locate(CtBehavior ctMethodToPatch) throws PatchingException, CannotCompileException {
-            Matcher finalMatcher = new Matcher.MethodCallMatcher(AbstractCreature.class, "damage");
+            Matcher finalMatcher = new Matcher.FieldAccessMatcher(AbstractCard.class, "exhaustOnUseOnce");
             return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
         }
     }

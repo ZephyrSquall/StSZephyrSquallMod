@@ -72,5 +72,13 @@
       "If you end your turn with #b",
       " #yTailwind, take an extra turn."
     ]
+  },
+  "${modID}:WindsFury": {
+    "NAME": "Wind's Fury",
+    "DESCRIPTIONS": [
+      "Your Attacks deal damage #b",
+      " additional time.",
+      " additional times."
+    ]
   }
 }

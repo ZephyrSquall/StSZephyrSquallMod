@@ -1,4 +1,4 @@
-package zephyrsquallmod.patches.attackcounting;
+package zephyrsquallmod.patches.attackcounting.callonindividualattack;
 
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
@@ -25,10 +25,10 @@ public class DamageActionPatch {
 
     @SpireInsertPatch(
             locator = Locator.class,
-            localvars = {"info"}
+            localvars = {"target", "info"}
     )
-    public static void onIndividualAttack(DamageInfo info) {
-        ZephyrSquallMod.onIndividualAttack(info.owner, info.type);
+    public static void onIndividualAttack(AbstractCreature target, DamageInfo info) {
+        ZephyrSquallMod.onIndividualAttack(info.owner, target, info.type, new int[]{info.base});
     }
 
     private static class Locator extends SpireInsertLocator {

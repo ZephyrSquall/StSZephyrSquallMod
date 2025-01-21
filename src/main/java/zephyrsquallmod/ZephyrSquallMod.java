@@ -6,6 +6,7 @@ import basemod.interfaces.*;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
 import com.megacrit.cardcrawl.actions.common.PlayTopCardAction;
@@ -22,6 +23,7 @@ import zephyrsquallmod.character.ZephyrSquallCharacter;
 import zephyrsquallmod.powers.LightReadingPower;
 import zephyrsquallmod.powers.MaelstromPower;
 import zephyrsquallmod.powers.OneWithTheWindPower;
+import zephyrsquallmod.powers.WindsFuryPower;
 import zephyrsquallmod.relics.BaseRelic;
 import zephyrsquallmod.util.GeneralUtils;
 import zephyrsquallmod.util.KeywordInfo;
@@ -267,6 +269,7 @@ public class ZephyrSquallMod implements
     public static int tailwindGained = 0;
     public static boolean hasOverdrawnThisTurn = false;
     public static int timesAttackedThisTurn = 0;
+    public static boolean newAttackCard = true;
 
     public static boolean isWellRead() {
         int cardThreshold = BaseMod.MAX_HAND_SIZE;
@@ -296,18 +299,35 @@ public class ZephyrSquallMod implements
 
     // This is intended to be like the onAttack hook that powers have, with the difference that it is only called once
     // per hit for attacks that hit every enemy, rather than once per hit per enemy. This assumes that other mods will only have Attacks
-    public static void onIndividualAttack(AbstractCreature source, DamageInfo.DamageType type) {
+    public static void onIndividualAttack(AbstractCreature source, AbstractCreature target, DamageInfo.DamageType type, int[] damage) {
         if (source == AbstractDungeon.player && type == DamageInfo.DamageType.NORMAL) {
             // Keep track of attacks made for Assessment.
             timesAttackedThisTurn++;
 
-            // Damage all enemies if the player has the Maelstrom power.
             for (AbstractPower power : AbstractDungeon.player.powers) {
+                // Add another attack that deals the same damage if the player has the Wind's Fury power.
+                if (newAttackCard && power.ID.equals(WindsFuryPower.POWER_ID)) {
+                    power.flash();
+                    if (target == null) {
+                        for (int i = 0; i < power.amount; i++) {
+                            AbstractDungeon.actionManager.addToTop(new DamageAllEnemiesAction(source, damage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
+                        }
+                    } else {
+                        for (int i = 0; i < power.amount; i++) {
+                            AbstractDungeon.actionManager.addToTop(new DamageAction(target, new DamageInfo(source, damage[0], DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
+                        }
+                    }
+                }
+
+                // Damage all enemies if the player has the Maelstrom power.
                 if (power.ID.equals(MaelstromPower.POWER_ID)) {
                     power.flash();
                     AbstractDungeon.actionManager.addToTop(new DamageAllEnemiesAction(power.owner, DamageInfo.createDamageMatrix(power.amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
                 }
             }
+
+            // Don't let Wind's Fury trigger for this Attack card again.
+            newAttackCard = false;
         }
     }
 
@@ -361,6 +381,7 @@ public class ZephyrSquallMod implements
         isStartingTailwindExtraTurn = false;
         tailwindGained = 0;
         timesAttackedThisTurn = 0;
+        newAttackCard = true;
     }
 
     @Override
