@@ -1,5 +1,12 @@
 [
   {
+    "PROPER_NAME": "Headwind",
+    "NAMES": [
+      "headwind"
+    ],
+    "DESCRIPTION": "Reduces attack damage by an amount equal to your Tailwind."
+  },
+  {
     "PROPER_NAME": "Record",
     "NAMES": [
       "record",

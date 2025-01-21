@@ -7,6 +7,11 @@
       "{@@} NL (Attacked !M! time{!M!|@=s|1=}.)"
     ]
   },
+  "${modID}:BlowAway": {
+    "NAME": "Blow Away",
+    "DESCRIPTION": "Apply 1 zephyrsquallmod:Headwind. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Apply 1 zephyrsquallmod:Headwind. NL Gain !M! zephyrsquallmod:Tailwind. NL Exhaust."
+  },
   "${modID}:Book": {
     "NAME": "Book",
     "DESCRIPTION": "Retain. NL Return the zephyrsquallmod:Recorded cards to your hand. NL Exhaust.",

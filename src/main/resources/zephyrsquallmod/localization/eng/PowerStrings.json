@@ -10,9 +10,9 @@
   "${modID}:BreatheDeeplyUpgrade": {
     "NAME": "Breathing Very Deeply",
     "DESCRIPTIONS": [
-      "Add a #yWind #yBlast into your hand next turn and Streamline it.",
+      "Add a #yWind #yBlast into your hand next turn and #yStreamline it.",
       "Add #b",
-      " #yWind #yBlasts into your hand next turn and Streamline them."
+      " #yWind #yBlasts into your hand next turn and #yStreamline them."
     ]
   },
   "${modID}:DrawDown": {
@@ -21,6 +21,14 @@
       "Draw #b",
       " less card next turn.",
       " less cards next turn."
+    ]
+  },
+  "${modID}:Headwind": {
+    "NAME": "Headwind",
+    "DESCRIPTIONS": [
+      "Reduces attack damage by an amount equal to your #yTailwind.",
+      "Reduces attack damage by an amount equal to #b",
+      " times your #yTailwind."
     ]
   },
   "${modID}:KnowledgeIsPower": {
@@ -33,9 +41,9 @@
   "${modID}:LightReading": {
     "NAME": "Light Reading",
     "DESCRIPTIONS": [
-      "Well Read bonus effects occur when you have #b",
+      "#yWell #yRead bonus effects occur when you have #b",
       " or more cards in your hand.",
-      "Well Read bonus effects always occur."
+      "#yWell #yRead bonus effects always occur."
     ]
   },
   "${modID}:Maelstrom": {
