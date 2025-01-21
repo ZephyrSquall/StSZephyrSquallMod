@@ -23,6 +23,11 @@
     "NAME": "Book Avalanche",
     "DESCRIPTION": "Deal !D! damage. NL Deals additional damage equal to the number of cards in your deck."
   },
+  "${modID}:BreatheDeeply": {
+    "NAME": "Breathe Deeply",
+    "DESCRIPTION": "Next turn, add a *Wind *Blast into your hand.",
+    "UPGRADE_DESCRIPTION": "Next turn, add a *Wind *Blast into your hand and zephyrsquallmod:Streamline it."
+  },
   "${modID}:CalculatedStrike": {
     "NAME": "Calculated Strike",
     "DESCRIPTION": "Can only be played if this card costs 0. NL Deal !D! damage.",
@@ -167,6 +172,10 @@
   "${modID}:Tornado": {
     "NAME": "Tornado",
     "DESCRIPTION": "{@@}Deal !D! damage to ALL enemies !M! time{!M!|@=s|1=}. NL If it is an extra turn created by zephyrsquallmod:Tailwind, deals damage !M! additional time{!M!|@=s|1=}."
+  },
+  "${modID}:WindBlast": {
+    "NAME": "Wind Blast",
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage to ALL enemies. NL Exhaust."
   },
   "${modID}:Write": {
     "NAME": "Write",

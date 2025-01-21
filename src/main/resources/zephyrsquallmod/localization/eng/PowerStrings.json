@@ -1,4 +1,20 @@
 {
+  "${modID}:BreatheDeeply": {
+    "NAME": "Breathing Deeply",
+    "DESCRIPTIONS": [
+      "Add a #yWind #yBlast into your hand next turn.",
+      "Add #b",
+      " #yWind #yBlasts into your hand next turn."
+    ]
+  },
+  "${modID}:BreatheDeeplyUpgrade": {
+    "NAME": "Breathing Very Deeply",
+    "DESCRIPTIONS": [
+      "Add a #yWind #yBlast into your hand next turn and Streamline it.",
+      "Add #b",
+      " #yWind #yBlasts into your hand next turn and Streamline them."
+    ]
+  },
   "${modID}:DrawDown": {
     "NAME": "Draw Down",
     "DESCRIPTIONS": [
