@@ -28,6 +28,11 @@
     "NAME": "Book Avalanche",
     "DESCRIPTION": "Deal !D! damage. NL Deals additional damage equal to the number of cards in your deck."
   },
+  "${modID}:Breakthrough": {
+    "NAME": "Breakthrough",
+    "DESCRIPTION": "zephyrsquallmod:Streamline X cards.",
+    "UPGRADE_DESCRIPTION": "zephyrsquallmod:Streamline X+1 cards."
+  },
   "${modID}:BreatheDeeply": {
     "NAME": "Breathe Deeply",
     "DESCRIPTION": "Next turn, add a *Wind *Blast into your hand.",
