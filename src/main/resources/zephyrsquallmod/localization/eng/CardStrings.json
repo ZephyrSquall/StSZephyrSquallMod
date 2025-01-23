@@ -189,7 +189,14 @@
   },
   "${modID}:Tornado": {
     "NAME": "Tornado",
-    "DESCRIPTION": "{@@}Deal !D! damage to ALL enemies !M! time{!M!|@=s|1=}. NL If it is an extra turn created by zephyrsquallmod:Tailwind, deals damage !M! additional time{!M!|@=s|1=}."
+    "DESCRIPTION": "{@@}Deal !D! damage to ALL enemies !M! time{!M!|@=s|1=}. NL During zephyrsquallmod:Tailwind extra turns, deals damage !M! additional time{!M!|@=s|1=}."
+  },
+  "${modID}:WhipUp": {
+    "NAME": "Whip Up",
+    "DESCRIPTION": "Cannot be played during zephyrsquallmod:Tailwind extra turns. NL Gain !M! zephyrsquallmod:Tailwind.",
+    "EXTENDED_DESCRIPTION": [
+      "It is a Tailwind extra turn!"
+    ]
   },
   "${modID}:WindBlast": {
     "NAME": "Wind Blast",
