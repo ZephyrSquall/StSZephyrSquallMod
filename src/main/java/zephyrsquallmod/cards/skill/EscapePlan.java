@@ -1,6 +1,7 @@
 package zephyrsquallmod.cards.skill;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import zephyrsquallmod.actions.unique.EscapePlanAction;
 import zephyrsquallmod.cards.BaseCard;
@@ -45,6 +46,8 @@ public class EscapePlan extends BaseCard {
         } else {
             this.rawDescription = (this.upgraded ? cardStrings.UPGRADE_DESCRIPTION : cardStrings.DESCRIPTION) + cardStrings.EXTENDED_DESCRIPTION[1];
         }
+        if (AbstractDungeon.player.hasRelic("Runic Dome"))
+            this.rawDescription = this.upgraded ? cardStrings.UPGRADE_DESCRIPTION : cardStrings.DESCRIPTION;
         super.calculateCardDamage(mo);
         initializeDescription();
     }
