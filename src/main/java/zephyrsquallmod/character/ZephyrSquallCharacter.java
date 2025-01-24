@@ -47,6 +47,20 @@ public class ZephyrSquallCharacter extends CustomPlayer {
     private static final String SHOULDER_1 = characterPath("shoulder.png"); //Shoulder 1 and 2 are used at rest sites.
     private static final String SHOULDER_2 = characterPath("shoulder2.png");
     private static final String CORPSE = characterPath("corpse.png"); //Corpse is when you die.
+    private static final String[] ORB_TEXTURES = {
+            characterPath("orb/layer1.png"),
+            characterPath("orb/layer2.png"),
+            characterPath("orb/layer3.png"),
+            characterPath("orb/layer4.png"),
+            characterPath("orb/layer5.png"),
+            characterPath("orb/base.png"),
+            characterPath("orb/layer1d.png"),
+            characterPath("orb/layer2d.png"),
+            characterPath("orb/layer3d.png"),
+            characterPath("orb/layer4d.png"),
+            characterPath("orb/layer5d.png")};
+    private static final String ORB_VFX_TEXTURE = characterPath("orb/vfx.png");
+    private static final float[] ORB_LAYER_SPEEDS = new float[] {30.0F, 20.0F, 40.0F, 15.0F, 0.0F};
 
     public static class Enums {
         //These are used to identify your character, as well as your character's card color.
@@ -61,7 +75,7 @@ public class ZephyrSquallCharacter extends CustomPlayer {
 
     public ZephyrSquallCharacter() {
         super(NAMES[0], Enums.ZEPHYR_SQUALL,
-                new CustomEnergyOrb(null, null, null), //Energy Orb
+                new CustomEnergyOrb(ORB_TEXTURES, ORB_VFX_TEXTURE, ORB_LAYER_SPEEDS), //Energy Orb
                 new SpriterAnimation(characterPath("animation/default.scml"))); //Animation
 
         initializeClass(null,
@@ -152,7 +166,7 @@ public class ZephyrSquallCharacter extends CustomPlayer {
         //Font used to display your current energy.
         //energyNumFontRed, Blue, Green, and Purple are used by the basegame characters.
         //It is possible to make your own, but not convenient.
-        return FontHelper.energyNumFontRed;
+        return FontHelper.energyNumFontBlue;
     }
 
     @Override
