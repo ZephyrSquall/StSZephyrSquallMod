@@ -9,7 +9,6 @@ import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.red.Strike_Red;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
@@ -19,6 +18,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
+import zephyrsquallmod.ZephyrSquallMod;
 import zephyrsquallmod.cards.attack.Focus;
 import zephyrsquallmod.cards.attack.Strike;
 import zephyrsquallmod.cards.skill.Defend;
@@ -32,7 +32,7 @@ import static zephyrsquallmod.ZephyrSquallMod.*;
 public class ZephyrSquallCharacter extends CustomPlayer {
     //Stats
     public static final int ENERGY_PER_TURN = 3;
-    public static final int MAX_HP = 70;
+    public static final int MAX_HP = 73;
     public static final int STARTING_GOLD = 99;
     public static final int CARD_DRAW = 5;
     public static final int ORB_SLOTS = 0;
@@ -123,7 +123,7 @@ public class ZephyrSquallCharacter extends CustomPlayer {
     public AbstractCard getStartCardForEvent() {
         //This card is used for the Gremlin card matching game.
         //It should be a non-strike non-defend starter card, but it doesn't have to be.
-        return new Strike_Red();
+        return new Focus();
     }
 
     /*- Below this is methods that you should *probably* adjust, but don't have to. -*/
@@ -137,9 +137,13 @@ public class ZephyrSquallCharacter extends CustomPlayer {
     public AbstractGameAction.AttackEffect[] getSpireHeartSlashEffect() {
         //These attack effects will be used when you attack the heart.
         return new AbstractGameAction.AttackEffect[] {
-                AbstractGameAction.AttackEffect.SLASH_VERTICAL,
+                ZephyrSquallMod.getRandomSlashEffect(),
+                ZephyrSquallMod.getRandomSlashEffect(),
+                ZephyrSquallMod.getRandomSlashEffect(),
+                ZephyrSquallMod.getRandomSlashEffect(),
+                ZephyrSquallMod.getRandomSlashEffect(),
+                ZephyrSquallMod.getRandomSlashEffect(),
                 AbstractGameAction.AttackEffect.SLASH_HEAVY,
-                AbstractGameAction.AttackEffect.BLUNT_HEAVY
         };
     }
 
@@ -173,13 +177,13 @@ public class ZephyrSquallCharacter extends CustomPlayer {
     public void doCharSelectScreenSelectEffect() {
         //This occurs when you click the character's button in the character select screen.
         //See SoundMaster for a full list of existing sound effects, or look at BaseMod's wiki for adding custom audio.
-        CardCrawlGame.sound.playA("ATTACK_DAGGER_2", MathUtils.random(-0.2F, 0.2F));
+        CardCrawlGame.sound.playA("EVENT_TOME", MathUtils.random(-0.2F, 0.2F));
         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.SHORT, false);
     }
     @Override
     public String getCustomModeCharacterButtonSoundKey() {
         //Similar to doCharSelectScreenSelectEffect, but used for the Custom mode screen. No shaking.
-        return "ATTACK_DAGGER_2";
+        return "EVENT_TOME";
     }
 
     //Don't adjust these four directly, adjust the contents of the CharacterStrings.json file.
