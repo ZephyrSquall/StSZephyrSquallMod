@@ -21,35 +21,11 @@ public class Focus extends BaseCard {
 
     private static final int DAMAGE = 2;
     private static final int UPG_DAMAGE = 1;
-    private static final int MAGIC = 1;
 
     public Focus() {
         super(ID, info);
 
         setDamage(DAMAGE, UPG_DAMAGE);
-        setMagic(MAGIC);
-    }
-
-    public void triggerOnGlowCheck() {
-        this.glowColor = (ZephyrSquallMod.isWellRead()) ? AbstractCard.GOLD_BORDER_GLOW_COLOR : AbstractCard.BLUE_BORDER_GLOW_COLOR;
-    }
-
-    public void applyPowers() {
-        int realBaseDamage = this.baseDamage;
-        if (ZephyrSquallMod.isWellRead())
-            this.baseDamage+= magicNumber;
-        super.applyPowers();
-        this.baseDamage = realBaseDamage;
-        this.isDamageModified = (this.damage != this.baseDamage);
-    }
-
-    public void calculateCardDamage(AbstractMonster mo) {
-        int realBaseDamage = this.baseDamage;
-        if (ZephyrSquallMod.isWellRead())
-            this.baseDamage+= magicNumber;
-        super.calculateCardDamage(mo);
-        this.baseDamage = realBaseDamage;
-        this.isDamageModified = (this.damage != this.baseDamage);
     }
 
     @Override

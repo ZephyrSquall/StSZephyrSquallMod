@@ -76,7 +76,7 @@
   },
   "${modID}:Focus": {
     "NAME": "Focus",
-    "DESCRIPTION": "Discard any number of cards. Deal !D! damage per discarded card. NL zephyrsquallmod:Well_Read: Deals an additional !M! damage per discarded card."
+    "DESCRIPTION": "Discard any number of cards. NL Deal !D! damage for each card discarded this way."
   },
   "${modID}:FurySwipes": {
     "NAME": "Fury Swipes",
@@ -126,8 +126,8 @@
   },
   "${modID}:OneWithTheWind": {
     "NAME": "One With the Wind",
-    "DESCRIPTION": "Block is not removed at the start of extra turns created by zephyrsquallmod:Tailwind.",
-    "UPGRADE_DESCRIPTION": "Block is not removed at the start of extra turns created by zephyrsquallmod:Tailwind. NL Gain !M! zephyrsquallmod:Tailwind."
+    "DESCRIPTION": "Block is not removed at the start of zephyrsquallmod:Tailwind extra turns.",
+    "UPGRADE_DESCRIPTION": "Block is not removed at the start of zephyrsquallmod:Tailwind extra turns. NL Gain !M! zephyrsquallmod:Tailwind."
   },
   "${modID}:PaperCuts": {
     "NAME": "Paper Cuts",
