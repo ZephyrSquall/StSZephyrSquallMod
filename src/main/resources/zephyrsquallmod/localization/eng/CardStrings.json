@@ -86,6 +86,13 @@
     "NAME": "Gust",
     "DESCRIPTION": "Deal !D! damage. NL Deals additional damage equal to zephyrsquallmod:Tailwind gained this combat."
   },
+  "${modID}:Harry": {
+    "NAME": "Harry",
+    "DESCRIPTION": "If you have attacked 4 or more times this turn, gain !B! Block. NL Deal !D! damage 2 times.",
+    "EXTENDED_DESCRIPTION": [
+      "{@@} NL (Attacked !M! time{!M!|@=s|1=}.)"
+    ]
+  },
   "${modID}:KnowledgeIsPower": {
     "NAME": "Knowledge is Power",
     "DESCRIPTION": "Whenever you try to draw a card while your hand is full, deal !M! damage to a random enemy."
