@@ -137,6 +137,11 @@
     "NAME": "Plagiarize",
     "DESCRIPTION": "{@@}Choose a Book. Add {!M!|@=!M! copies|1=a copy} of that Book into your hand."
   },
+  "${modID}:PlanB": {
+    "NAME": "Plan B",
+    "DESCRIPTION": "{@@}Discard up to 2 cards. NL Draw !M! card{!M!|@=s|1=} for each card discarded this way.",
+    "UPGRADE_DESCRIPTION": "{@@}Discard any number of cards. NL Draw !M! card{!M!|@=s|1=} for each card discarded this way."
+  },
   "${modID}:PlanOfAttack": {
     "NAME": "Plan of Attack",
     "DESCRIPTION": "Deal !D! damage 2 times. NL While in hand, your other Attacks deal 1 additional damage."
