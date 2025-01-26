@@ -4,6 +4,11 @@
       "Copy"
     ]
   },
+  "${modID}:RefineAction": {
+    "TEXT": [
+      "Upgrade and Streamline"
+    ]
+  },
   "${modID}:RecordAction": {
     "TEXT": [
       "Record",

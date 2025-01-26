@@ -173,6 +173,10 @@
     "NAME": "Read Ahead",
     "DESCRIPTION": "{@@}zephyrsquallmod:Record the top !M! card{!M!|@=s|1=} of your draw pile."
   },
+  "${modID}:Refine": {
+    "NAME": "Refine",
+    "DESCRIPTION": "{@@}Choose {!M!|@=!M! cards|1=a card}. Upgrade {!M!|@=those cards|1=that card} for the rest of combat and zephyrsquallmod:Streamline {!M!|@=them|1=it}."
+  },
   "${modID}:Riposte": {
     "NAME": "Riposte",
     "DESCRIPTION": "Whenever you block an attack this turn, deal blocked damage back. NL zephyrsquallmod:Well_Read: Gain !B! Block."
