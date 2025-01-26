@@ -140,6 +140,10 @@
     "NAME": "Paper Cuts",
     "DESCRIPTION": "{@@}Deal !D! damage !M! time{!M!|@=s|1=}. NL Exhaust."
   },
+  "${modID}:PerfectTechnique": {
+    "NAME": "Perfect Technique",
+    "DESCRIPTION": "zephyrsquallmod:Streamline all cards in your draw pile. NL Exhaust."
+  },
   "${modID}:Plagiarize": {
     "NAME": "Plagiarize",
     "DESCRIPTION": "{@@}Choose a Book. Add {!M!|@=!M! copies|1=a copy} of that Book into your hand."
