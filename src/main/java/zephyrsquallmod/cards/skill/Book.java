@@ -2,6 +2,7 @@ package zephyrsquallmod.cards.skill;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import zephyrsquallmod.actions.unique.BookAction;
 import zephyrsquallmod.cards.BaseCard;
@@ -67,6 +68,23 @@ public class Book extends BaseCard {
             this.rawDescription = cardStrings.EXTENDED_DESCRIPTION[5];
         }
         initializeDescription();
+    }
+
+    // When applying powers for a Book, also apply powers for all monsters so their damage is correctly updated in case
+    // the Book has a Recorded Glyph of Warding.
+    public void applyPowers() {
+        super.applyPowers();
+        for (AbstractMonster m : AbstractDungeon.getMonsters().monsters)
+            m.applyPowers();
+    }
+
+    // Applying powers on monsters at the end of turn shouldn't be necessary to get Glyph of Warding damage correct, but
+    // this is included as a failsafe to make sure the appropriate damage is dealt if somehow all prior checks to apply
+    // powers on monsters were missed. This isn't ideal as it means the enemy's damage intent will suddenly adjust as
+    // the turn ends, but a sudden change like this will make it more obvious if I have a bug to track down.
+    public void triggerOnEndOfPlayerTurn() {
+        for (AbstractMonster m : AbstractDungeon.getMonsters().monsters)
+            m.applyPowers();
     }
 
     @Override

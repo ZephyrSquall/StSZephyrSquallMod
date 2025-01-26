@@ -19,6 +19,8 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import zephyrsquallmod.cards.BaseCard;
 import zephyrsquallmod.cards.attack.PlanOfAttack;
+import zephyrsquallmod.cards.skill.Book;
+import zephyrsquallmod.cards.skill.GlyphOfWarding;
 import zephyrsquallmod.character.ZephyrSquallCharacter;
 import zephyrsquallmod.powers.LightReadingPower;
 import zephyrsquallmod.powers.MaelstromPower;
@@ -295,6 +297,22 @@ public class ZephyrSquallMod implements
             return damage + planOfAttacksInHand;
         }
         return damage;
+    }
+
+    public static float applyGlyphOfWardingDamageReduction(float damage) {
+        int glyphOfWardingDamageReduction = 0;
+        for (AbstractCard card : AbstractDungeon.player.hand.group) {
+            if (card instanceof Book && card.cardID.equals(Book.ID)) {
+                // Cast the card to a Book so its recordedCards field can be accessed.
+                Book book = (Book) card;
+                for (AbstractCard recordedCard : book.recordedCards) {
+                    if (recordedCard.cardID.equals(GlyphOfWarding.ID)) {
+                        glyphOfWardingDamageReduction += recordedCard.magicNumber;
+                    }
+                }
+            }
+        }
+        return damage - glyphOfWardingDamageReduction;
     }
 
     // This is intended to be like the onAttack hook that powers have, with the difference that it is only called once

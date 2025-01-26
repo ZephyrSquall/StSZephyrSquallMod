@@ -82,6 +82,13 @@
     "NAME": "Fury Swipes",
     "DESCRIPTION": "zephyrsquallmod:Streamline ALL cards containing \"Strike\"."
   },
+  "${modID}:GlyphOfWarding": {
+    "NAME": "Glyph of Warding",
+    "DESCRIPTION": "Unplayable. NL While zephyrsquallmod:Recorded in a Book in your hand, enemy attacks deal !M! less damage.",
+    "EXTENDED_DESCRIPTION": [
+      "I can't play this card."
+    ]
+  },
   "${modID}:Gust": {
     "NAME": "Gust",
     "DESCRIPTION": "Deal !D! damage. NL Deals additional damage equal to zephyrsquallmod:Tailwind gained this combat."
