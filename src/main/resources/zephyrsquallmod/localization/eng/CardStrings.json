@@ -157,6 +157,10 @@
     "NAME": "Plan of Attack",
     "DESCRIPTION": "Deal !D! damage 2 times. NL While in hand, your other Attacks deal 1 additional damage."
   },
+  "${modID}:PolishedStrike": {
+    "NAME": "Polished Strike",
+    "DESCRIPTION": "Deal !D! damage. NL This card remains zephyrsquallmod:Streamlined after it is played."
+  },
   "${modID}:Prepare": {
     "NAME": "Prepare",
     "DESCRIPTION": "{@@}Gain !B! Block. NL zephyrsquallmod:Streamline !M! card{!M!|@=s|1=}."

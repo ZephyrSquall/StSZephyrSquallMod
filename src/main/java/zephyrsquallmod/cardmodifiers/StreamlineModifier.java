@@ -3,6 +3,7 @@ package zephyrsquallmod.cardmodifiers;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import zephyrsquallmod.ZephyrSquallMod;
+import zephyrsquallmod.cards.attack.PolishedStrike;
 
 import java.util.ArrayList;
 
@@ -74,7 +75,7 @@ public class StreamlineModifier extends AbstractCardModifier {
 
     @Override
     public boolean removeOnCardPlayed(AbstractCard card) {
-        return true;
+        return !card.cardID.equals(PolishedStrike.ID);
     }
 
     @Override
