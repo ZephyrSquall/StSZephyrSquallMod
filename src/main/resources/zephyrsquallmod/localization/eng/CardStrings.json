@@ -53,15 +53,6 @@
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
   },
-  "${modID}:EscapePlan": {
-    "NAME": "Escape Plan",
-    "DESCRIPTION": "Gain Block equal to half the damage intention of an enemy.",
-    "UPGRADE_DESCRIPTION": "Gain Block equal to the damage intention of an enemy.",
-    "EXTENDED_DESCRIPTION": [
-      " NL (Gains !B! Block.)",
-      " NL (No effect.)"
-    ]
-  },
   "${modID}:FlashOfInspiration": {
     "NAME": "Flash of Inspiration",
     "DESCRIPTION": "{@@}Unplayable. NL Whenever you draw this card, zephyrsquallmod:Streamline !M! card{!M!|@=s|1=} at random.",
@@ -87,6 +78,15 @@
     "DESCRIPTION": "Unplayable. NL While zephyrsquallmod:Recorded in a Book in your hand, enemy attacks deal !M! less damage.",
     "EXTENDED_DESCRIPTION": [
       "I can't play this card."
+    ]
+  },
+  "${modID}:GoWithTheFlow": {
+    "NAME": "Go with the Flow",
+    "DESCRIPTION": "Gain Block equal to the enemy's damage intent. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain Block equal to the enemy's damage intent.",
+    "EXTENDED_DESCRIPTION": [
+      "{@@} NL (Gains !B! Block{!M!|@= !M! times|1=}.)",
+      " NL (No effect.)"
     ]
   },
   "${modID}:Gust": {
@@ -132,7 +132,7 @@
     "DESCRIPTION": "{@@}Deal !D! damage !M! time{!M!|@=s|1=}. NL Increase the number of times ALL Nexus cards deal damage by 1 this combat."
   },
   "${modID}:OneWithTheWind": {
-    "NAME": "One With the Wind",
+    "NAME": "One with the Wind",
     "DESCRIPTION": "Block is not removed at the start of zephyrsquallmod:Tailwind extra turns.",
     "UPGRADE_DESCRIPTION": "Block is not removed at the start of zephyrsquallmod:Tailwind extra turns. NL Gain !M! zephyrsquallmod:Tailwind."
   },
