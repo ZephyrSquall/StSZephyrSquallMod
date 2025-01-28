@@ -53,6 +53,10 @@
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
   },
+  "${modID}:Feint": {
+    "NAME": "Feint",
+    "DESCRIPTION": "Remove all Block from the enemy. NL Apply !M! Vulnerable."
+  },
   "${modID}:FlashOfInspiration": {
     "NAME": "Flash of Inspiration",
     "DESCRIPTION": "{@@}Unplayable. NL Whenever you draw this card, zephyrsquallmod:Streamline !M! card{!M!|@=s|1=} at random.",
