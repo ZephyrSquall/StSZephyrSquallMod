@@ -7,6 +7,10 @@
       "{@@} NL (Attacked !M! time{!M!|@=s|1=}.)"
     ]
   },
+  "${modID}:BackAttack": {
+    "NAME": "Back Attack",
+    "DESCRIPTION": "Deal !D! damage 2 times. NL zephyrsquallmod:Well_Read: Apply !M! Vulnerable."
+  },
   "${modID}:BlowAway": {
     "NAME": "Blow Away",
     "DESCRIPTION": "Apply 1 zephyrsquallmod:Headwind. NL Exhaust.",
