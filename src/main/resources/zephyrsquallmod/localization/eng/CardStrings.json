@@ -1,4 +1,8 @@
 {
+  "${modID}:Append": {
+    "NAME": "Append",
+    "DESCRIPTION": "{@@}zephyrsquallmod:Record !M! card{!M!|@=s|1=}. If you have any *Books in hand, choose one to add the card{!M!|@=s|1=} to instead of creating a new *Book."
+  },
   "${modID}:Assessment": {
     "NAME": "Assessment",
     "DESCRIPTION": "Draw 1 card for each time you have attacked this turn.",

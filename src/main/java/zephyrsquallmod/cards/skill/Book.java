@@ -45,7 +45,7 @@ public class Book extends BaseCard {
         this.updateDescription();
     }
 
-    private void updateDescription() {
+    public void updateDescription() {
         if (this.hasRecordedCards) {
             StringBuilder description = new StringBuilder(cardStrings.EXTENDED_DESCRIPTION[0]);
             for (int i = 0; i < this.recordedCards.size(); i++) {

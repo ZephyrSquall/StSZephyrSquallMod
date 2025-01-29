@@ -1,4 +1,9 @@
 {
+  "${modID}:AppendAction": {
+    "TEXT": [
+      "append to"
+    ]
+  },
   "${modID}:PlagiarizeAction": {
     "TEXT": [
       "Copy"
