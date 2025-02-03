@@ -46,6 +46,10 @@
     "DESCRIPTION": "Next turn, add a *Wind *Blast into your hand.",
     "UPGRADE_DESCRIPTION": "Next turn, add a *Wind *Blast into your hand and zephyrsquallmod:Streamline it."
   },
+  "${modID}:BuildMomentum": {
+    "NAME": "Build Momentum",
+    "DESCRIPTION": "Deal !D! damage. NL If it is not the first turn of combat and you did not lose HP last turn, deal !D! damage again."
+  },
   "${modID}:CalculatedStrike": {
     "NAME": "Calculated Strike",
     "DESCRIPTION": "Can only be played if this card costs 0. NL Deal !D! damage.",

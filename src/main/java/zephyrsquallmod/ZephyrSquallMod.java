@@ -272,6 +272,10 @@ public class ZephyrSquallMod implements
     public static boolean hasOverdrawnThisTurn = false;
     public static int timesAttackedThisTurn = 0;
     public static boolean newAttackCard = true;
+    // Build Momentum specifically doesn't trigger its effect on the first turn to prevent any ambiguity over
+    // whether the player didn't receive damage the previous nonexistent turn. So force this value to true at the
+    // start of combat.
+    public static boolean hasLostHPLastTurn = true;
 
     public static boolean isWellRead() {
         int cardThreshold = BaseMod.MAX_HAND_SIZE;
@@ -400,6 +404,7 @@ public class ZephyrSquallMod implements
         tailwindGained = 0;
         timesAttackedThisTurn = 0;
         newAttackCard = true;
+        hasLostHPLastTurn = true;
     }
 
     @Override
