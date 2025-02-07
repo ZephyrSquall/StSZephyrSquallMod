@@ -1,4 +1,10 @@
 {
+  "${modID}:AllOut": {
+    "NAME": "All-Out",
+    "DESCRIPTIONS": [
+      "You cannot gain #yBlock."
+    ]
+  },
   "${modID}:BreatheDeeply": {
     "NAME": "Breathing Deeply",
     "DESCRIPTIONS": [

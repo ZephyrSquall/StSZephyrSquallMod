@@ -1,4 +1,8 @@
 {
+  "${modID}:AllOut": {
+    "NAME": "All-Out",
+    "DESCRIPTION": "Convert your Block into zephyrsquallmod:Tailwind. NL You cannot gain Block for the rest of combat."
+  },
   "${modID}:Append": {
     "NAME": "Append",
     "DESCRIPTION": "{@@}zephyrsquallmod:Record !M! card{!M!|@=s|1=}. If you have any *Books in hand, choose one to add the card{!M!|@=s|1=} to instead of creating a new *Book."
@@ -48,7 +52,7 @@
   },
   "${modID}:BuildMomentum": {
     "NAME": "Build Momentum",
-    "DESCRIPTION": "Deal !D! damage. NL If it is not the first turn of combat and you did not lose HP last turn, deal !D! damage again."
+    "DESCRIPTION": "Deal !D! damage. NL Deal !D! damage again unless you lost HP last turn or it is the first turn of combat."
   },
   "${modID}:CalculatedStrike": {
     "NAME": "Calculated Strike",
