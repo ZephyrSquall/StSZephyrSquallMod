@@ -2,6 +2,7 @@ package zephyrsquallmod.powers;
 
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.watcher.SkipEnemiesTurnAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -29,7 +30,11 @@ public class TailwindPower extends BasePower {
     public void atEndOfTurn(boolean isPlayer) {
         if (isPlayer && amount >= 10) {
             addToBot(new VFXAction(new WhirlwindEffect(new Color(0.6F, 1.0F, 1.0F, 1.0F), false)));
-            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, TailwindPower.POWER_ID));
+            if (amount == 10) {
+                addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, TailwindPower.POWER_ID));
+            } else {
+                addToBot(new ReducePowerAction(this.owner, this.owner, TailwindPower.POWER_ID, 10));
+            }
             addToBot(new SkipEnemiesTurnAction());
             ZephyrSquallMod.isTailwindExtraTurn = true;
             ZephyrSquallMod.isStartingTailwindExtraTurn = true;
