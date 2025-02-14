@@ -10,7 +10,7 @@ public class AllOutPower extends BasePower {
     private static final boolean TURN_BASED = false;
 
     public AllOutPower(AbstractCreature owner) {
-        super(POWER_ID, TYPE, TURN_BASED, owner, 1);
+        super(POWER_ID, TYPE, TURN_BASED, owner, -1);
     }
 
     public void updateDescription() {

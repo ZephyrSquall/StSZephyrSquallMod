@@ -70,7 +70,7 @@
   "${modID}:OneWithTheWind": {
     "NAME": "One With the Wind",
     "DESCRIPTIONS": [
-      "#yBlock is not removed at the start of extra turns created by #yTailwind."
+      "#yBlock is not removed at the start of #yTailwind extra turns."
     ]
   },
   "${modID}:PressureSystem": {
