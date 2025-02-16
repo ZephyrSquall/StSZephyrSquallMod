@@ -35,13 +35,13 @@ public class SwiftStrike extends BaseCard {
     }
 
     public void triggerOnGlowCheck() {
-        this.glowColor = (this.cost == 0) ? AbstractCard.GOLD_BORDER_GLOW_COLOR : AbstractCard.BLUE_BORDER_GLOW_COLOR;
+        this.glowColor = (costForTurn == 0 || (freeToPlayOnce && cost != -1)) ? AbstractCard.GOLD_BORDER_GLOW_COLOR : AbstractCard.BLUE_BORDER_GLOW_COLOR;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-        if (this.cost == 0) {
+        if (costForTurn == 0 || (freeToPlayOnce && cost != -1)) {
             addToBot(new DrawCardAction(p, magicNumber));
             addToBot(new StreamlineAction());
         }

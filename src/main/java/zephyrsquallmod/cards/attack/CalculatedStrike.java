@@ -32,14 +32,14 @@ public class CalculatedStrike extends BaseCard {
     }
 
     public void triggerOnGlowCheck() {
-        this.glowColor = (this.cost == 0) ? AbstractCard.GOLD_BORDER_GLOW_COLOR : AbstractCard.BLUE_BORDER_GLOW_COLOR;
+        this.glowColor = (costForTurn == 0 || (freeToPlayOnce && cost != -1)) ? AbstractCard.GOLD_BORDER_GLOW_COLOR : AbstractCard.BLUE_BORDER_GLOW_COLOR;
     }
 
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         boolean canUse = super.canUse(p, m);
         if (!canUse)
             return false;
-        if (this.cost != 0) {
+        if (!(costForTurn == 0 || (freeToPlayOnce && cost != -1))) {
             this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
             return false;
         }
