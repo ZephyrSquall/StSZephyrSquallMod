@@ -14,7 +14,7 @@ public class Assessment extends BaseCard {
             ZephyrSquallCharacter.Enums.CARD_COLOR,
             CardType.SKILL,
             CardRarity.UNCOMMON,
-            CardTarget.SELF,
+            CardTarget.NONE,
             1
     );
 

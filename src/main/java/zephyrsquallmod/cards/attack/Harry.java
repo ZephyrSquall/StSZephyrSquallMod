@@ -14,7 +14,7 @@ public class Harry extends BaseCard {
     public static final String ID = makeID(Harry.class.getSimpleName());
     private static final CardStats info = new CardStats(
             ZephyrSquallCharacter.Enums.CARD_COLOR,
-            CardType.SKILL,
+            CardType.ATTACK,
             CardRarity.COMMON,
             CardTarget.SELF_AND_ENEMY,
             1

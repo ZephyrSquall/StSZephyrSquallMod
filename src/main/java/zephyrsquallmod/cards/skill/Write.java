@@ -13,7 +13,7 @@ public class Write extends BaseCard {
             ZephyrSquallCharacter.Enums.CARD_COLOR,
             CardType.SKILL,
             CardRarity.COMMON,
-            CardTarget.SELF,
+            CardTarget.NONE,
             1
     );
 

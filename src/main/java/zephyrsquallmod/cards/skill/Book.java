@@ -16,7 +16,7 @@ public class Book extends BaseCard {
             CardColor.COLORLESS,
             CardType.SKILL,
             CardRarity.SPECIAL,
-            CardTarget.SELF,
+            CardTarget.NONE,
             1
     );
 

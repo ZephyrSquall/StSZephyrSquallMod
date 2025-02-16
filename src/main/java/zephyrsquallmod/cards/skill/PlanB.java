@@ -11,7 +11,7 @@ public class PlanB extends BaseCard {
     public static final String ID = makeID(PlanB.class.getSimpleName());
     private static final CardStats info = new CardStats(
             ZephyrSquallCharacter.Enums.CARD_COLOR,
-            CardType.ATTACK,
+            CardType.SKILL,
             CardRarity.UNCOMMON,
             CardTarget.NONE,
             1

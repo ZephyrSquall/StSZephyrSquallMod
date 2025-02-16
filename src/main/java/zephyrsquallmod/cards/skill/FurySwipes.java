@@ -13,7 +13,7 @@ public class FurySwipes extends BaseCard {
             ZephyrSquallCharacter.Enums.CARD_COLOR,
             CardType.SKILL,
             CardRarity.UNCOMMON,
-            CardTarget.SELF,
+            CardTarget.NONE,
             2
     );
 

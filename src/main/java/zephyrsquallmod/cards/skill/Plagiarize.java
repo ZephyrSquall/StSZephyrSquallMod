@@ -13,7 +13,7 @@ public class Plagiarize extends BaseCard {
             ZephyrSquallCharacter.Enums.CARD_COLOR,
             CardType.SKILL,
             CardRarity.RARE,
-            CardTarget.SELF,
+            CardTarget.NONE,
             1
     );
 
