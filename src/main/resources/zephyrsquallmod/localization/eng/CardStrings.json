@@ -1,7 +1,7 @@
 {
   "${modID}:AllOut": {
     "NAME": "All-Out",
-    "DESCRIPTION": "Convert your Block into zephyrsquallmod:Tailwind. NL You cannot gain Block for the rest of combat."
+    "DESCRIPTION": "Convert your Block into zephyrsquallmod:Tailwind. NL You can no longer gain Block this combat."
   },
   "${modID}:Append": {
     "NAME": "Append",
@@ -87,7 +87,7 @@
   },
   "${modID}:Focus": {
     "NAME": "Focus",
-    "DESCRIPTION": "Discard any number of cards. NL Deal !D! damage for each card discarded this way."
+    "DESCRIPTION": "Discard any number of cards. NL Deal !D! damage for each card discarded."
   },
   "${modID}:FurySwipes": {
     "NAME": "Fury Swipes",
@@ -170,8 +170,8 @@
   },
   "${modID}:PlanB": {
     "NAME": "Plan B",
-    "DESCRIPTION": "{@@}Discard up to 2 cards. NL Draw !M! card{!M!|@=s|1=} for each card discarded this way.",
-    "UPGRADE_DESCRIPTION": "{@@}Discard any number of cards. NL Draw !M! card{!M!|@=s|1=} for each card discarded this way."
+    "DESCRIPTION": "{@@}Discard up to 2 cards. NL Draw !M! card{!M!|@=s|1=} for each card discarded.",
+    "UPGRADE_DESCRIPTION": "{@@}Discard any number of cards. NL Draw !M! card{!M!|@=s|1=} for each card discarded."
   },
   "${modID}:PlanOfAttack": {
     "NAME": "Plan of Attack",

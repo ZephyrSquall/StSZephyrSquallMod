@@ -24,7 +24,7 @@
   },
   "${modID}:ResearchPaper": {
     "NAME": "Research Paper",
-    "FLAVOR": "\"We conclude the Spire will awaken soon. We must…\" The rest of the page is torn off.",
+    "FLAVOR": "\"We conclude that Spireblight will ravage the land, unless we…\" The rest of the page is torn off.",
     "DESCRIPTIONS": [
       "Whenever you #yzephyrsquallmod:Record a card, #yUpgrade it for the rest of combat."
     ]
