@@ -49,10 +49,10 @@ public class Assessment extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (this.upgraded) {
-            addToBot(new DrawCardAction(magicNumber + 1));
+            addToBot(new DrawCardAction(magicNumber + 2));
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
         } else {
-            addToBot(new DrawCardAction(magicNumber));
+            addToBot(new DrawCardAction(magicNumber + 1));
             this.rawDescription = cardStrings.DESCRIPTION;
         }
         initializeDescription();

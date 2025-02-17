@@ -1,9 +1,7 @@
 package zephyrsquallmod.cards.attack;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import zephyrsquallmod.ZephyrSquallMod;
 import zephyrsquallmod.actions.unique.FocusAction;
 import zephyrsquallmod.cards.BaseCard;
 import zephyrsquallmod.character.ZephyrSquallCharacter;
@@ -19,7 +17,7 @@ public class Focus extends BaseCard {
             1
     );
 
-    private static final int DAMAGE = 2;
+    private static final int DAMAGE = 4;
     private static final int UPG_DAMAGE = 1;
 
     public Focus() {

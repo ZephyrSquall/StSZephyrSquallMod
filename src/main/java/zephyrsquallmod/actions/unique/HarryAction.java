@@ -25,7 +25,7 @@ public class HarryAction extends AbstractGameAction {
         for (int i = 0; i < 2; i++) {
             addToTop(new DamageAction(m, info, ZephyrSquallMod.getRandomSlashEffect()));
         }
-        if (ZephyrSquallMod.timesAttackedThisTurn >= 4) {
+        if (ZephyrSquallMod.timesAttackedThisTurn >= 3) {
             addToTop(new GainBlockAction(p, p, block));
         }
         this.isDone = true;

@@ -5,12 +5,12 @@
   },
   "${modID}:Append": {
     "NAME": "Append",
-    "DESCRIPTION": "{@@}zephyrsquallmod:Record !M! card{!M!|@=s|1=}. If you have any *Books in hand, choose one to add the card{!M!|@=s|1=} to instead of creating a new *Book."
+    "DESCRIPTION": "{@@}zephyrsquallmod:Record !M! card{!M!|@=s|1=}. If you have any *Books in hand, add the card{!M!|@=s|1=} to one of them instead of creating a new *Book."
   },
   "${modID}:Assessment": {
     "NAME": "Assessment",
-    "DESCRIPTION": "Draw 1 card for each time you have attacked this turn.",
-    "UPGRADE_DESCRIPTION": "Draw 1 card. NL Draw 1 additional card for each time you have attacked this turn.",
+    "DESCRIPTION": "Draw 1 card. NL Draw 1 additional card for each time you have attacked this turn.",
+    "UPGRADE_DESCRIPTION": "Draw 2 cards. NL Draw 1 additional card for each time you have attacked this turn.",
     "EXTENDED_DESCRIPTION": [
       "{@@} NL (Attacked !M! time{!M!|@=s|1=}.)"
     ]
@@ -115,7 +115,7 @@
   },
   "${modID}:Harry": {
     "NAME": "Harry",
-    "DESCRIPTION": "If you have attacked 4 or more times this turn, gain !B! Block. NL Deal !D! damage 2 times.",
+    "DESCRIPTION": "If you have attacked 3 or more times this turn, gain !B! Block. NL Deal !D! damage 2 times.",
     "EXTENDED_DESCRIPTION": [
       "{@@} NL (Attacked !M! time{!M!|@=s|1=}.)"
     ]
@@ -149,7 +149,7 @@
   },
   "${modID}:Nexus": {
     "NAME": "Nexus",
-    "DESCRIPTION": "{@@}Deal !D! damage !M! time{!M!|@=s|1=}. NL Increase the number of times ALL Nexus cards deal damage by 1 this combat."
+    "DESCRIPTION": "{@@}Deal !D! damage !M! time{!M!|@=s|1=}. Increase how many times ALL Nexus cards deal damage by 1 this combat."
   },
   "${modID}:OneWithTheWind": {
     "NAME": "One with the Wind",
@@ -203,7 +203,7 @@
   },
   "${modID}:Riposte": {
     "NAME": "Riposte",
-    "DESCRIPTION": "Whenever you block an attack this turn, deal blocked damage back. NL zephyrsquallmod:Well_Read: Gain !B! Block."
+    "DESCRIPTION": "Whenever you block an attack this turn, deal blocked damage back. NL Gain !B! Block."
   },
   "${modID}:SecretPassage": {
     "NAME": "Secret Passage",

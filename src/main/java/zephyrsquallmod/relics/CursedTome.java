@@ -10,7 +10,7 @@ public class CursedTome extends BaseRelic {
     public static final String ID = makeID(NAME);
     private static final RelicTier RARITY = RelicTier.BOSS;
     private static final LandingSound SOUND = LandingSound.FLAT;
-    public static final int DRAW_SKIP_FREQUENCY = 3;
+    public static final int DRAW_SKIP_FREQUENCY = 5;
 
 
     public CursedTome() {

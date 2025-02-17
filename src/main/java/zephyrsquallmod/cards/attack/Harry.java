@@ -35,7 +35,7 @@ public class Harry extends BaseCard {
     }
 
     public void triggerOnGlowCheck() {
-        this.glowColor = (ZephyrSquallMod.timesAttackedThisTurn >= 4) ? AbstractCard.GOLD_BORDER_GLOW_COLOR : AbstractCard.BLUE_BORDER_GLOW_COLOR;
+        this.glowColor = (ZephyrSquallMod.timesAttackedThisTurn >= 3) ? AbstractCard.GOLD_BORDER_GLOW_COLOR : AbstractCard.BLUE_BORDER_GLOW_COLOR;
     }
 
     public void applyPowers() {

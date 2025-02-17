@@ -11,7 +11,7 @@
     "NAME": "Cursed Tome",
     "FLAVOR": "\"Why would I want to know anything else...\"",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. Skip every third card you would draw."
+      "Gain [E] at the start of your turn. Skip every fifth card you would draw."
     ]
   },
   "${modID}:FieldJournal": {
