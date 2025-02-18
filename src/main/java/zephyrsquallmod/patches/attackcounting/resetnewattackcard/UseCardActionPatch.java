@@ -18,7 +18,7 @@ public class UseCardActionPatch {
             locator = Locator.class
     )
     public static void resetNewAttackCard() {
-        ZephyrSquallMod.newAttackCard = true;
+        ZephyrSquallMod.lastAttackCardTarget = null;
     }
 
     private static class Locator extends SpireInsertLocator {

@@ -6,7 +6,6 @@ import basemod.interfaces.*;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
 import com.megacrit.cardcrawl.actions.common.PlayTopCardAction;
@@ -25,7 +24,6 @@ import zephyrsquallmod.character.ZephyrSquallCharacter;
 import zephyrsquallmod.powers.LightReadingPower;
 import zephyrsquallmod.powers.MaelstromPower;
 import zephyrsquallmod.powers.OneWithTheWindPower;
-import zephyrsquallmod.powers.WindsFuryPower;
 import zephyrsquallmod.relics.BaseRelic;
 import zephyrsquallmod.util.GeneralUtils;
 import zephyrsquallmod.util.KeywordInfo;
@@ -271,7 +269,7 @@ public class ZephyrSquallMod implements
     public static int tailwindGained = 0;
     public static boolean hasOverdrawnThisTurn = false;
     public static int timesAttackedThisTurn = 0;
-    public static boolean newAttackCard = true;
+    public static AbstractCreature lastAttackCardTarget = null;
     // Build Momentum specifically doesn't trigger its effect on the first turn to prevent any ambiguity over
     // whether the player didn't receive damage the previous nonexistent turn. So force this value to true at the
     // start of combat.
@@ -326,30 +324,16 @@ public class ZephyrSquallMod implements
             // Keep track of attacks made for Assessment.
             timesAttackedThisTurn++;
 
+            // Damage all enemies if the player has the Maelstrom power.
             for (AbstractPower power : AbstractDungeon.player.powers) {
-                // Add another attack that deals the same damage if the player has the Wind's Fury power.
-                if (newAttackCard && power.ID.equals(WindsFuryPower.POWER_ID)) {
-                    power.flash();
-                    if (target == null) {
-                        for (int i = 0; i < power.amount; i++) {
-                            AbstractDungeon.actionManager.addToTop(new DamageAllEnemiesAction(source, damage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
-                        }
-                    } else {
-                        for (int i = 0; i < power.amount; i++) {
-                            AbstractDungeon.actionManager.addToTop(new DamageAction(target, new DamageInfo(source, damage[0], DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
-                        }
-                    }
-                }
-
-                // Damage all enemies if the player has the Maelstrom power.
                 if (power.ID.equals(MaelstromPower.POWER_ID)) {
                     power.flash();
                     AbstractDungeon.actionManager.addToTop(new DamageAllEnemiesAction(power.owner, DamageInfo.createDamageMatrix(power.amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
                 }
             }
 
-            // Don't let Wind's Fury trigger for this Attack card again.
-            newAttackCard = false;
+            // Keep track of the last target for Wind's Fury
+            lastAttackCardTarget = target;
         }
     }
 
@@ -403,7 +387,7 @@ public class ZephyrSquallMod implements
         isStartingTailwindExtraTurn = false;
         tailwindGained = 0;
         timesAttackedThisTurn = 0;
-        newAttackCard = true;
+        lastAttackCardTarget = null;
         hasLostHPLastTurn = true;
     }
 
