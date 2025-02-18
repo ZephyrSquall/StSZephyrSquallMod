@@ -2,7 +2,7 @@
 
 ## Installation
 As this mod is still incomplete, it has not yet been uploaded to the Steam Workshop. Until then, this mod can be installed directly from this GitHub page by following these instructions.
-- Subscribe to [ModTheSpire](https://steamcommunity.com/workshop/filedetails/?id=1605060445), [BaseMod](https://steamcommunity.com/sharedfiles/filedetails/?id=1605833019), and [StSMod](https://steamcommunity.com/sharedfiles/filedetails/?id=1609158507) from the Steam Workshop. These are necessary for this mod to work.
+- Subscribe to [ModTheSpire](https://steamcommunity.com/workshop/filedetails/?id=1605060445), [BaseMod](https://steamcommunity.com/sharedfiles/filedetails/?id=1605833019), and [StSLib](https://steamcommunity.com/sharedfiles/filedetails/?id=1609158507) from the Steam Workshop. These are necessary for this mod to work.
 - In the Releases tab on the right side of this page, click the latest release to go to its page.
 - Scroll to the "Assets" section of the latest release and download the `ZephyrSquallMod.jar` file. Ignore the source code files.
 - Put the `ZephyrSquallMod.jar` file in your `SlayTheSpire/mods` folder. Where this folder is located depends on where you install Steam games. If you use the default location, it should be located somewhere like `C:/Program Files (x86)/Steam/steamapps/common/SlayTheSpire/mods`. If you are unsure where this folder is, you should be able to find it by right-clicking Slay the Spire in your Steam library and choosing Manage > Browse Local Files.
