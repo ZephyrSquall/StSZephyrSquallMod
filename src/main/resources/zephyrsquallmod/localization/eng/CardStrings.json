@@ -110,7 +110,7 @@
   },
   "${modID}:Gust": {
     "NAME": "Gust",
-    "DESCRIPTION": "Deal !D! damage. NL Deals additional damage equal to zephyrsquallmod:Tailwind gained this combat."
+    "DESCRIPTION": "Deal !D! damage and apply !M! zephyrsquallmod:Headwind to ALL enemies."
   },
   "${modID}:Harry": {
     "NAME": "Harry",

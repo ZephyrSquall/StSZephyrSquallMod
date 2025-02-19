@@ -280,7 +280,6 @@ public class ZephyrSquallMod implements
     public static boolean isTailwindExtraTurn = false;
     // This variable is solely to make sure isTailwindExtraTurn isn't set back to false immediately upon the extra turn starting.
     public static boolean isStartingTailwindExtraTurn = false;
-    public static int tailwindGained = 0;
     public static boolean hasOverdrawnThisTurn = false;
     public static int timesAttackedThisTurn = 0;
     public static AbstractCreature lastAttackCardTarget = null;
@@ -399,7 +398,6 @@ public class ZephyrSquallMod implements
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
         isTailwindExtraTurn = false;
         isStartingTailwindExtraTurn = false;
-        tailwindGained = 0;
         timesAttackedThisTurn = 0;
         lastAttackCardTarget = null;
         hasLostHPLastTurn = true;
