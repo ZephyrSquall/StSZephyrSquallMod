@@ -21,8 +21,7 @@
   },
   "${modID}:BlowAway": {
     "NAME": "Blow Away",
-    "DESCRIPTION": "Apply 1 zephyrsquallmod:Headwind. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Apply 1 zephyrsquallmod:Headwind. NL Gain !M! zephyrsquallmod:Tailwind. NL Exhaust."
+    "DESCRIPTION": "Apply !M! zephyrsquallmod:Headwind. NL Exhaust."
   },
   "${modID}:Book": {
     "NAME": "Book",

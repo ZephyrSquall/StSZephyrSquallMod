@@ -4,7 +4,7 @@
     "NAMES": [
       "headwind"
     ],
-    "DESCRIPTION": "Reduces attack damage by an amount equal to your Tailwind."
+    "DESCRIPTION": "Decreases attack damage. At the end of the enemy's turn, #yHeadwind is reduced to half its current amount."
   },
   {
     "PROPER_NAME": "Record",

@@ -32,9 +32,8 @@
   "${modID}:Headwind": {
     "NAME": "Headwind",
     "DESCRIPTIONS": [
-      "Reduces attack damage by an amount equal to your #yTailwind.",
-      "Reduces attack damage by an amount equal to #b",
-      " times your #yTailwind."
+      "Decreases attack damage by #b",
+      ". At the end of its turn, #yHeadwind is reduced to half its current amount."
     ]
   },
   "${modID}:KnowledgeIsPower": {
