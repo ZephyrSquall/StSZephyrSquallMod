@@ -1,1 +1,9 @@
-{}
+{
+  "${modID}:BottledSquall": {
+    "NAME": "Bottled Squall",
+    "DESCRIPTIONS": [
+      "Gain #b",
+      " #yTailwind."
+    ]
+  }
+}

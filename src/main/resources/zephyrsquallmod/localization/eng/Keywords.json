@@ -23,6 +23,7 @@
     "DESCRIPTION": "Streamlined cards cost #b1 less [E] until played."
   },
   {
+    "ID": "Tailwind",
     "PROPER_NAME": "Tailwind",
     "NAMES": [
       "tailwind"
