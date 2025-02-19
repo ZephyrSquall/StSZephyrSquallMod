@@ -212,6 +212,10 @@
     "NAME": "Seize an Opening",
     "DESCRIPTION": "{@@}If the enemy does not intend to attack, deal !D! damage !M! time{!M!|@=s|1=}."
   },
+  "${modID}:Soar": {
+    "NAME": "Soar",
+    "DESCRIPTION": "Gain !M! zephyrsquallmod:Flying."
+  },
   "${modID}:StormBrewing": {
     "NAME": "Storm Brewing",
     "DESCRIPTION": "Gain !M! zephyrsquallmod:Tailwind. NL Permanently increase this card's zephyrsquallmod:Tailwind by 1, to a maximum of 9. NL Exhaust.",

@@ -72,6 +72,14 @@
       "#yBlock is not removed at the start of #yTailwind extra turns."
     ]
   },
+  "${modID}:PlayerFlying": {
+    "NAME": "Flying",
+    "DESCRIPTIONS": [
+      "Receive #b50% less attack damage. Cancelled if dealt unblocked attack damage #b",
+      " more time.",
+      " more times."
+    ]
+  },
   "${modID}:PressureSystem": {
     "NAME": "Pressure System",
     "DESCRIPTIONS": [

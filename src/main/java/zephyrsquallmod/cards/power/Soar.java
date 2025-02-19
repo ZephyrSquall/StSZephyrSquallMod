@@ -5,23 +5,23 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import zephyrsquallmod.cards.BaseCard;
 import zephyrsquallmod.character.ZephyrSquallCharacter;
-import zephyrsquallmod.powers.KnowledgeIsPowerPower;
+import zephyrsquallmod.powers.PlayerFlyingPower;
 import zephyrsquallmod.util.CardStats;
 
-public class KnowledgeIsPower extends BaseCard {
-    public static final String ID = makeID(KnowledgeIsPower.class.getSimpleName());
+public class Soar extends BaseCard {
+    public static final String ID = makeID(Soar.class.getSimpleName());
     private static final CardStats info = new CardStats(
             ZephyrSquallCharacter.Enums.CARD_COLOR,
             CardType.POWER,
-            CardRarity.UNCOMMON,
+            CardRarity.RARE,
             CardTarget.SELF,
-            2
+            3
     );
 
-    private static final int MAGIC = 5;
-    private static final int UPG_MAGIC = 2;
+    private static final int MAGIC = 2;
+    private static final int UPG_MAGIC = 1;
 
-    public KnowledgeIsPower() {
+    public Soar() {
         super(ID, info);
 
         setMagic(MAGIC, UPG_MAGIC);
@@ -29,6 +29,6 @@ public class KnowledgeIsPower extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new KnowledgeIsPowerPower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new PlayerFlyingPower(p, magicNumber)));
     }
 }
