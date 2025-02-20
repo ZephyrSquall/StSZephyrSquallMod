@@ -2,7 +2,7 @@ package zephyrsquallmod.relics;
 
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import zephyrsquallmod.actions.common.StreamlineRandomCardAction;
+import zephyrsquallmod.actions.unique.SpireEncyclopediaAction;
 import zephyrsquallmod.character.ZephyrSquallCharacter;
 
 import static zephyrsquallmod.ZephyrSquallMod.makeID;
@@ -42,7 +42,7 @@ public class SpireEncyclopedia extends BaseRelic {
     public void atTurnStartPostDraw() {
         flash();
         addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-        addToBot(new StreamlineRandomCardAction());
+        addToBot(new SpireEncyclopediaAction());
     }
 
     public boolean canSpawn() {
