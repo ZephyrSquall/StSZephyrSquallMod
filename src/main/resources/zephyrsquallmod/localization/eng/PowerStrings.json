@@ -84,8 +84,8 @@
   "${modID}:PressureSystem": {
     "NAME": "Pressure System",
     "DESCRIPTIONS": [
-      "At the start of your turn, gain #b",
-      " #yTailwind."
+      "At the start of your turn, apply #b",
+      " #yHeadwind to ALL enemies."
     ]
   },
   "${modID}:Riposte": {

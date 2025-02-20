@@ -1,7 +1,10 @@
 package zephyrsquallmod.powers;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import static zephyrsquallmod.ZephyrSquallMod.makeID;
@@ -21,6 +24,8 @@ public class PressureSystemPower extends BasePower {
     @Override
     public void atStartOfTurnPostDraw() {
         flash();
-        addToBot(new ApplyPowerAction(this.owner, this.owner, new TailwindPower(this.owner, amount)));
+        for (AbstractMonster m : (AbstractDungeon.getCurrRoom()).monsters.monsters)
+            addToBot(new ApplyPowerAction(m, owner, new HeadwindPower(m, amount), amount, true, AbstractGameAction.AttackEffect.NONE));
+
     }
 }

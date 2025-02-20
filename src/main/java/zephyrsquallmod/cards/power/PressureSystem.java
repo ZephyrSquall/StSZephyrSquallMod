@@ -13,20 +13,19 @@ public class PressureSystem extends BaseCard {
     private static final CardStats info = new CardStats(
             ZephyrSquallCharacter.Enums.CARD_COLOR,
             CardType.POWER,
-            CardRarity.RARE,
+            CardRarity.UNCOMMON,
             CardTarget.SELF,
             1
     );
 
-    private static final int MAGIC = 1;
-    private static final int UPG_COST = 0;
+    private static final int MAGIC = 2;
+    private static final int UPG_MAGIC = 1;
 
 
     public PressureSystem() {
         super(ID, info);
 
-        setMagic(MAGIC);
-        setCostUpgrade(UPG_COST);
+        setMagic(MAGIC, UPG_MAGIC);
     }
 
     @Override

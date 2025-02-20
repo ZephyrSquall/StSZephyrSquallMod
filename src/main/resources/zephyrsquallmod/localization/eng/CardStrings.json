@@ -186,7 +186,7 @@
   },
   "${modID}:PressureSystem": {
     "NAME": "Pressure System",
-    "DESCRIPTION": "At the start of your turn, gain !M! zephyrsquallmod:Tailwind."
+    "DESCRIPTION": "At the start of your turn, apply !M! zephyrsquallmod:Headwind to ALL enemies."
   },
   "${modID}:QuickThinking": {
     "NAME": "Quick Thinking",
