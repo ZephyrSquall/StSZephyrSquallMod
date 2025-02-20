@@ -30,7 +30,7 @@ public class QuickThinking extends BaseCard {
     }
 
     public void triggerWhenDrawn() {
-        addToBot(new DrawCardAction(magicNumber));
+        addToTop(new DrawCardAction(magicNumber));
     }
 
     @Override
