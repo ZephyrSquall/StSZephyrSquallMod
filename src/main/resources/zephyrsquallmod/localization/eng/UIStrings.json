@@ -4,6 +4,12 @@
       "append to"
     ]
   },
+  "${modID}:FieldJournalAction": {
+    "TEXT": [
+      "Choose a Card to Streamline (Field Journal).",
+      "I have no cards in my draw pile that can be Streamlined!"
+    ]
+  },
   "${modID}:PlagiarizeAction": {
     "TEXT": [
       "Copy"

@@ -2,7 +2,7 @@ package zephyrsquallmod.relics;
 
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import zephyrsquallmod.actions.common.StreamlineRandomCardAction;
+import zephyrsquallmod.actions.unique.FieldJournalAction;
 import zephyrsquallmod.character.ZephyrSquallCharacter;
 
 import static zephyrsquallmod.ZephyrSquallMod.makeID;
@@ -36,7 +36,7 @@ public class FieldJournal extends BaseRelic {
             this.activated = true;
             flash();
             addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-            addToBot(new StreamlineRandomCardAction());
+            addToBot(new FieldJournalAction());
         }
     }
 }
