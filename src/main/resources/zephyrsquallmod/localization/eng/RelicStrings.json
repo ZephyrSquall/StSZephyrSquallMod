@@ -36,5 +36,13 @@
     "DESCRIPTIONS": [
       "Whenever you #yzephyrsquallmod:Record a card, #yUpgrade it for the rest of combat."
     ]
+  },
+  "${modID}:SpireEncyclopedia": {
+    "NAME": "Spire Encyclopedia",
+    "FLAVOR": "\"At last, I see the heart of the matter!\"",
+    "DESCRIPTIONS": [
+      "Replaces [#00ffff]Field [#00ffff]Journal. At the start of your turn, #yzephyrsquallmod:Streamline #b",
+      " card at random."
+    ]
   }
 }
