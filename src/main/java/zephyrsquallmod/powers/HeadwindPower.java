@@ -4,6 +4,8 @@ import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import zephyrsquallmod.relics.Anemometer;
 
 import static zephyrsquallmod.ZephyrSquallMod.makeID;
 
@@ -17,11 +19,14 @@ public class HeadwindPower extends BasePower {
     }
 
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        if (AbstractDungeon.player.hasRelic(Anemometer.ID))
+            this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
+        else
+            this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
     public void atEndOfRound() {
-        int targetAmount = this.amount / 2;
+        int targetAmount = AbstractDungeon.player.hasRelic(Anemometer.ID) ? (this.amount * 3) / 4 : this.amount / 2;
         if (targetAmount == 0) {
             addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, HeadwindPower.POWER_ID));
         } else {

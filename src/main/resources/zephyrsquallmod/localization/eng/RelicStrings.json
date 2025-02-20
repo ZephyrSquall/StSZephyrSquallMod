@@ -1,4 +1,11 @@
 {
+  "${modID}:Anemometer": {
+    "NAME": "Anemometer",
+    "FLAVOR": "\"This one's defective! It's stirring the wind faster, ruining my measurements!\"",
+    "DESCRIPTIONS": [
+      "At the end of the enemy's turn, #yzephyrsquallmod:Headwind is reduced to #b75% rather than half."
+    ]
+  },
   "${modID}:BrokenSpectacles": {
     "NAME": "Broken Spectacles",
     "FLAVOR": "They shattered protecting their previous wearer.",
