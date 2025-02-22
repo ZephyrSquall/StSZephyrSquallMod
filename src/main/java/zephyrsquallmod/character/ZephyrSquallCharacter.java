@@ -2,7 +2,6 @@ package zephyrsquallmod.character;
 
 import basemod.abstracts.CustomEnergyOrb;
 import basemod.abstracts.CustomPlayer;
-import basemod.animations.SpriterAnimation;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
@@ -44,9 +43,11 @@ public class ZephyrSquallCharacter extends CustomPlayer {
     private static final String[] TEXT = characterStrings.TEXT;
 
     //Image file paths
+    private static final String COMBAT = characterPath("combat.png");
     private static final String SHOULDER_1 = characterPath("shoulder.png"); //Shoulder 1 and 2 are used at rest sites.
     private static final String SHOULDER_2 = characterPath("shoulder2.png");
     private static final String CORPSE = characterPath("corpse.png"); //Corpse is when you die.
+    private static final float drawYReduction = 60.0F * Settings.scale;
     private static final String[] ORB_TEXTURES = {
             characterPath("orb/layer1.png"),
             characterPath("orb/layer2.png"),
@@ -74,16 +75,18 @@ public class ZephyrSquallCharacter extends CustomPlayer {
     }
 
     public ZephyrSquallCharacter() {
-        super(NAMES[0], Enums.ZEPHYR_SQUALL,
-                new CustomEnergyOrb(ORB_TEXTURES, ORB_VFX_TEXTURE, ORB_LAYER_SPEEDS), //Energy Orb
-                new SpriterAnimation(characterPath("animation/default.scml"))); //Animation
+        super(NAMES[0], Enums.ZEPHYR_SQUALL, new CustomEnergyOrb(ORB_TEXTURES, ORB_VFX_TEXTURE, ORB_LAYER_SPEEDS), null, null);
 
-        initializeClass(null,
+        // Zephyr has a huge sprite, help it fit into the screen and take up more of the floor space in the room by
+        // moving it down slightly.
+        drawY = drawY - drawYReduction;
+
+        initializeClass(COMBAT,
                 SHOULDER_2,
                 SHOULDER_1,
                 CORPSE,
                 getLoadout(),
-                20.0F, -20.0F, 200.0F, 250.0F, //Character hitbox. x y position, then width and height.
+                10.0F, 10.0F, 450.0F, 350.0F, //Character hitbox. x y position, then width and height.
                 new EnergyManager(ENERGY_PER_TURN));
 
         //Location for text bubbles. You can adjust it as necessary later. For most characters, these values are fine.
@@ -223,5 +226,13 @@ public class ZephyrSquallCharacter extends CustomPlayer {
     public AbstractPlayer newInstance() {
         //Makes a new instance of your character class.
         return new ZephyrSquallCharacter();
+    }
+
+    @Override
+    public void movePosition(float x, float y) {
+        // Usually when movePositions is called, it completely overwrites the player's drawY variable. To keep Zephyr's
+        // y position slightly lowered, it must be lowered again every time this method is called.
+        float newY = y - drawYReduction;
+        super.movePosition(x, newY);
     }
 }
