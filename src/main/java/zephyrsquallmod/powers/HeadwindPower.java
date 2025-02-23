@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import zephyrsquallmod.patches.WindCutPatch;
 import zephyrsquallmod.relics.Anemometer;
 
 import static zephyrsquallmod.ZephyrSquallMod.makeID;
@@ -16,6 +17,7 @@ public class HeadwindPower extends BasePower {
 
     public HeadwindPower(AbstractCreature owner, int amount) {
         super(POWER_ID, TYPE, TURN_BASED, owner, amount);
+        WindCutPatch.headwindApplied.set(owner, WindCutPatch.headwindApplied.get(owner) + amount);
     }
 
     public void updateDescription() {

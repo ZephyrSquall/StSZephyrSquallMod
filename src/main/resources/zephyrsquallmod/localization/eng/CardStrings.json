@@ -260,6 +260,14 @@
     "NAME": "Wind Blast",
     "DESCRIPTION": "Ethereal. NL Deal !D! damage to ALL enemies. NL Exhaust."
   },
+  "${modID}:WindCut": {
+    "NAME": "Wind Cut",
+    "DESCRIPTION": "Deal damage equal to zephyrsquallmod:Tailwind gained plus zephyrsquallmod:Headwind applied to the enemy this combat.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Deals !D! damage.)",
+      " NL (Deals !D!+ damage.)"
+    ]
+  },
   "${modID}:Write": {
     "NAME": "Write",
     "DESCRIPTION": "{@@}zephyrsquallmod:Record up to !M! card{!M!|@=s|1=}."

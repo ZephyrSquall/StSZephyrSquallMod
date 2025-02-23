@@ -20,6 +20,7 @@ public class TailwindPower extends BasePower {
 
     public TailwindPower(AbstractCreature owner, int amount) {
         super(POWER_ID, TYPE, TURN_BASED, owner, amount);
+        ZephyrSquallMod.tailwindGained += amount;
     }
 
     public void updateDescription() {
