@@ -165,7 +165,7 @@
   },
   "${modID}:Plagiarize": {
     "NAME": "Plagiarize",
-    "DESCRIPTION": "{@@}Choose a Book. Add {!M!|@=!M! copies|1=a copy} of that Book into your hand."
+    "DESCRIPTION": "{@@}Choose a *Book. Add {!M!|@=!M! copies|1=a copy} of that *Book into your hand."
   },
   "${modID}:PlanB": {
     "NAME": "Plan B",
@@ -203,6 +203,10 @@
   "${modID}:Riposte": {
     "NAME": "Riposte",
     "DESCRIPTION": "Whenever you block an attack this turn, deal blocked damage back. NL Gain !B! Block."
+  },
+  "${modID}:RushOfIdeas": {
+    "NAME": "Rush of Ideas",
+    "DESCRIPTION": "{@@}Deal !D! damage 2 time{!M!|@=s|1=}. NL The next time you play a *Book this turn, zephyrsquallmod:Streamline each of its zephyrsquallmod:Recorded cards."
   },
   "${modID}:SecretPassage": {
     "NAME": "Secret Passage",
