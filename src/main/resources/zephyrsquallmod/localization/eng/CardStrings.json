@@ -202,7 +202,7 @@
   },
   "${modID}:Riposte": {
     "NAME": "Riposte",
-    "DESCRIPTION": "Whenever you block an attack this turn, deal blocked damage back. NL Gain !B! Block."
+    "DESCRIPTION": "Gain !B! Block. NL Whenever you block an attack this turn, deal damage back equal to blocked damage."
   },
   "${modID}:RushOfIdeas": {
     "NAME": "Rush of Ideas",

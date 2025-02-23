@@ -30,7 +30,7 @@ public class Riposte extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new RipostePower(p)));
         addToBot(new GainBlockAction(p, p, block));
+        addToBot(new ApplyPowerAction(p, p, new RipostePower(p)));
     }
 }
