@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import zephyrsquallmod.cards.BaseCard;
 import zephyrsquallmod.character.ZephyrSquallCharacter;
-import zephyrsquallmod.powers.PlayerFlyingPower;
+import zephyrsquallmod.powers.PlayerFlightPower;
 import zephyrsquallmod.util.CardStats;
 
 public class Soar extends BaseCard {
@@ -15,10 +15,10 @@ public class Soar extends BaseCard {
             CardType.POWER,
             CardRarity.RARE,
             CardTarget.SELF,
-            3
+            1
     );
 
-    private static final int MAGIC = 2;
+    private static final int MAGIC = 3;
     private static final int UPG_MAGIC = 1;
 
     public Soar() {
@@ -29,6 +29,6 @@ public class Soar extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new PlayerFlyingPower(p, magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new PlayerFlightPower(p, magicNumber)));
     }
 }

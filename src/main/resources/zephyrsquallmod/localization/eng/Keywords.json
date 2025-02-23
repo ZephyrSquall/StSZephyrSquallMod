@@ -7,11 +7,11 @@
     "DESCRIPTION": "Decreases attack damage. At the end of the enemy's turn, #yHeadwind is reduced to half its current amount."
   },
   {
-    "PROPER_NAME": "Flying",
+    "PROPER_NAME": "Flight",
     "NAMES": [
-      "flying"
+      "flight"
     ],
-    "DESCRIPTION": "Receive #b50% less attack damage. Cancelled if dealt unblocked attack damage enough times."
+    "DESCRIPTION": "Receive #b50% less attack damage. Cancelled if dealt attack damage enough times. When cancelled, lose [E] next turn."
   },
   {
     "PROPER_NAME": "Record",

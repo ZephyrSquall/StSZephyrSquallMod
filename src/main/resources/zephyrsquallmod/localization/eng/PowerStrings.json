@@ -21,6 +21,13 @@
       " #yWind #yBlasts into your hand next turn and #yStreamline them."
     ]
   },
+  "${modID}:Crashing": {
+    "NAME": "Crashing",
+    "DESCRIPTIONS": [
+      "At the start of your next turn, lose ",
+      "[E] "
+    ]
+  },
   "${modID}:DrawDown": {
     "NAME": "Draw Down",
     "DESCRIPTIONS": [
@@ -73,12 +80,12 @@
       "#yBlock is not removed at the start of #yTailwind extra turns."
     ]
   },
-  "${modID}:PlayerFlying": {
-    "NAME": "Flying",
+  "${modID}:PlayerFlight": {
+    "NAME": "Flight",
     "DESCRIPTIONS": [
-      "Receive #b50% less attack damage. Cancelled if dealt unblocked attack damage #b",
-      " more time.",
-      " more times."
+      "Receive #b50% less attack damage. Cancelled if dealt attack damage #b",
+      " more time. When cancelled, lose [E] next turn.",
+      " more times. When cancelled, lose [E] next turn."
     ]
   },
   "${modID}:PressureSystem": {
