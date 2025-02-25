@@ -4,6 +4,11 @@
       "append to"
     ]
   },
+  "${modID}:BrowseTheLibraryAction": {
+    "TEXT": [
+      "Choose a Card to Record."
+    ]
+  },
   "${modID}:FieldJournalAction": {
     "TEXT": [
       "Choose a Card to Streamline (Field Journal).",

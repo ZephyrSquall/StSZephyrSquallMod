@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import zephyrsquallmod.actions.common.RecordAction;
+import zephyrsquallmod.actions.common.RecordCardsInHandAction;
 import zephyrsquallmod.cards.BaseCard;
 import zephyrsquallmod.cards.skill.Book;
 import zephyrsquallmod.character.ZephyrSquallCharacter;
@@ -35,7 +35,7 @@ public class TomeSmack extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new RecordAction(this.magicNumber, false, false));
+        addToBot(new RecordCardsInHandAction(this.magicNumber, false, false));
         addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
     }
 }

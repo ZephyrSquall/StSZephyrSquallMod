@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import zephyrsquallmod.ZephyrSquallMod;
-import zephyrsquallmod.actions.common.RecordAction;
+import zephyrsquallmod.actions.common.RecordCardsInHandAction;
 import zephyrsquallmod.cards.BaseCard;
 import zephyrsquallmod.character.ZephyrSquallCharacter;
 import zephyrsquallmod.powers.DrawDownPower;
@@ -42,7 +42,7 @@ public class SecretPassage extends BaseCard {
         addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, magicNumber)));
         addToBot(new ApplyPowerAction(p, p, new DrawDownPower(p, 5)));
         if (ZephyrSquallMod.isWellRead()) {
-            addToBot(new RecordAction(2, true, true));
+            addToBot(new RecordCardsInHandAction(2, true, true));
         }
     }
 }

@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 import zephyrsquallmod.cards.skill.Book;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
@@ -38,11 +37,10 @@ public class AppendAction extends AbstractGameAction {
         this.isDone = true;
     }
 
-    Consumer<List<AbstractCard>> appendSelected = cardsList -> {
+    Consumer<List<AbstractCard>> appendSelected = cardList -> {
         // AppendAction needs to use follow-up actions, since cards that are filtered out of the hand by the predicate
         // for the SelectCardsInHandAction (which in this case filters out all Books) don't get returned to the hand
         // until this action is over, however those Books need to be back in hand for this callback to work correctly.
-        ArrayList<AbstractCard> cardsToAppend = new ArrayList<>(cardsList);
-        addToTop(new AppendFollowUpAction(cardsToAppend));
+        addToTop(new AppendFollowUpAction(cardList));
     };
 }

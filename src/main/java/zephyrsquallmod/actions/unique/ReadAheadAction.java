@@ -2,10 +2,13 @@ package zephyrsquallmod.actions.unique;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import zephyrsquallmod.actions.common.RecordSpecificCardsAction;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ReadAheadAction extends AbstractGameAction {
     private int amount;
@@ -26,7 +29,11 @@ public class ReadAheadAction extends AbstractGameAction {
             cardsToRecord.add(AbstractDungeon.player.drawPile.group.get(i));
         }
 
-        addToTop(new RecordSpecificCardsAction(cardsToRecord, AbstractDungeon.player.drawPile));
+        Map<AbstractCard, CardGroup> cardMap = new HashMap<>();
+        for (AbstractCard card : cardsToRecord) {
+            cardMap.put(card, AbstractDungeon.player.drawPile);
+        }
+        addToTop(new RecordSpecificCardsAction(cardsToRecord, cardMap));
         this.isDone = true;
     }
 }

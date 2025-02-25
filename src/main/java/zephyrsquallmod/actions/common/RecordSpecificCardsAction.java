@@ -9,23 +9,26 @@ import zephyrsquallmod.cards.skill.Book;
 import zephyrsquallmod.relics.ResearchPaper;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class RecordSpecificCardsAction extends AbstractGameAction {
-    public final ArrayList<AbstractCard> cards;
-    private final CardGroup cardGroup;
+    private final ArrayList<AbstractCard> cardList;
+    private final Map<AbstractCard, CardGroup> cardMap;
 
-    public RecordSpecificCardsAction(ArrayList<AbstractCard> cards, CardGroup cardGroup) {
-        this.cards = cards;
-        this.cardGroup = cardGroup;
+    public RecordSpecificCardsAction(List<AbstractCard> cardList, Map<AbstractCard, CardGroup> cardMap) {
+        this.cardList = new ArrayList<>(cardList);
+        this.cardMap = cardMap;
     }
 
     public void update() {
         // Don't create a Book if 0 cards were provided to be Recorded.
-        if (!cards.isEmpty()) {
+        if (!cardList.isEmpty()) {
             // Make sure Books aren't recorded again by removing any books from the group.
-            cards.removeIf(card -> card.cardID.equals(Book.ID));
-            addToTop(new MakeTempCardInHandAction(new Book(cards), false, true));
-            for (AbstractCard card : cards) {
+            cardList.removeIf(card -> card.cardID.equals(Book.ID));
+            addToTop(new MakeTempCardInHandAction(new Book(cardList), false, true));
+            for (AbstractCard card : cardList) {
+                CardGroup cardGroup = cardMap.get(card);
                 // What follows is a direct copy-paste of the resetCardBeforeMoving method on the cardGroup class.
                 // Ideally I'd call this method directly, but I can't because it's private. Normally calling the method
                 // directly isn't needed because public methods are provided for moving cards from hand into the draw,
@@ -39,7 +42,7 @@ public class RecordSpecificCardsAction extends AbstractGameAction {
                 card.unhover();
                 card.untip();
                 card.stopGlowing();
-                this.cardGroup.group.remove(card);
+                cardGroup.group.remove(card);
                 // End of resetCardBeforeMoving method copy-paste.
 
                 if (card.type != AbstractCard.CardType.CURSE && card.type != AbstractCard.CardType.STATUS && AbstractDungeon.player.hasRelic(ResearchPaper.ID)) {

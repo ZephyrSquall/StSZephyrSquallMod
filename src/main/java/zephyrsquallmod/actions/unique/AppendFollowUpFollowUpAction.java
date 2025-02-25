@@ -6,13 +6,13 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import zephyrsquallmod.cards.skill.Book;
 import zephyrsquallmod.relics.ResearchPaper;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class AppendFollowUpFollowUpAction extends AbstractGameAction {
-    private final ArrayList<AbstractCard> cardsToAppend;
+    private final List<AbstractCard> cardsToAppend;
     private final Book book;
 
-    public AppendFollowUpFollowUpAction(ArrayList<AbstractCard> cardsToAppend, Book book) {
+    public AppendFollowUpFollowUpAction(List<AbstractCard> cardsToAppend, Book book) {
         this.cardsToAppend = cardsToAppend;
         this.book = book;
     }

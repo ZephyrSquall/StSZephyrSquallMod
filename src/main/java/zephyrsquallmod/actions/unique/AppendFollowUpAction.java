@@ -3,14 +3,16 @@ package zephyrsquallmod.actions.unique;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsInHandAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import zephyrsquallmod.actions.common.RecordSpecificCardsAction;
 import zephyrsquallmod.cards.skill.Book;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Consumer;
 
 import static zephyrsquallmod.ZephyrSquallMod.makeID;
@@ -18,9 +20,9 @@ import static zephyrsquallmod.ZephyrSquallMod.makeID;
 public class AppendFollowUpAction extends AbstractGameAction {
     private static final UIStrings appendUiStrings = CardCrawlGame.languagePack.getUIString(makeID("AppendAction"));
     public static final String[] APPEND_TEXT = appendUiStrings.TEXT;
-    private ArrayList<AbstractCard> cardsToAppend;
+    private List<AbstractCard> cardsToAppend;
 
-    public AppendFollowUpAction(ArrayList<AbstractCard> cardsToAppend) {
+    public AppendFollowUpAction(List<AbstractCard> cardsToAppend) {
         this.cardsToAppend = cardsToAppend;
     }
 
@@ -29,7 +31,11 @@ public class AppendFollowUpAction extends AbstractGameAction {
         if (AbstractDungeon.player.hand.group.stream().anyMatch(card -> card.cardID.equals(Book.ID))) {
             addToTop(new SelectCardsInHandAction(APPEND_TEXT[0], card -> card.cardID.equals(Book.ID), appendToBook));
         } else {
-            addToTop(new RecordSpecificCardsAction(cardsToAppend, AbstractDungeon.player.hand));
+            Map<AbstractCard, CardGroup> cardMap = new HashMap<>();
+            for (AbstractCard card : cardsToAppend) {
+                cardMap.put(card, AbstractDungeon.player.hand);
+            }
+            addToTop(new RecordSpecificCardsAction(cardsToAppend, cardMap));
         }
         this.isDone = true;
     }
