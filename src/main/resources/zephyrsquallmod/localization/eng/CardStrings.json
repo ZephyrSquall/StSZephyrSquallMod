@@ -83,6 +83,10 @@
       "I can't play this card."
     ]
   },
+  "${modID}:FlowState": {
+  "NAME": "Flow State",
+  "DESCRIPTION": "{@@}Deal !D! damage to ALL enemies !M! time{!M!|@=s|1=}. NL zephyrsquallmod:Well_Read: Immediately play this card for free."
+  },
   "${modID}:Flurry": {
     "NAME": "Flurry",
     "DESCRIPTION": "Deal !D! damage double X times.",
