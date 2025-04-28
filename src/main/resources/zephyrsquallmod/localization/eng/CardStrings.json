@@ -39,6 +39,11 @@
     "NAME": "Book Avalanche",
     "DESCRIPTION": "Deal !D! damage. NL Deals additional damage equal to the number of cards in your deck."
   },
+  "${modID}:Bookmark": {
+    "NAME": "Bookmark",
+    "DESCRIPTION": "Retain. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "{@@}Retain. NL Draw !M! card{!M!|@=s|1=}. NL Exhaust."
+  },
   "${modID}:Breakthrough": {
     "NAME": "Breakthrough",
     "DESCRIPTION": "zephyrsquallmod:Streamline X cards.",
@@ -71,6 +76,10 @@
   "${modID}:Defend": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
+  },
+  "${modID}:Examine": {
+    "NAME": "Examine",
+    "DESCRIPTION": "{@@}Add !M! *Bookmark{!M!|@=s|1=} into your hand. NL Exhaust."
   },
   "${modID}:Feint": {
     "NAME": "Feint",
