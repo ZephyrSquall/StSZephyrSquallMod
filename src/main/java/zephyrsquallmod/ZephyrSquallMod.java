@@ -288,6 +288,7 @@ public class ZephyrSquallMod implements
     // whether the player didn't receive damage the previous nonexistent turn. So force this value to true at the
     // start of combat.
     public static boolean hasLostHPLastTurn = true;
+    public static int cluttersPlayedThisTurn = 0;
 
     public static boolean isWellRead() {
         int cardThreshold = BaseMod.MAX_HAND_SIZE;
@@ -394,6 +395,7 @@ public class ZephyrSquallMod implements
         isStartingTailwindExtraTurn = false;
         hasOverdrawnThisTurn = false;
         timesAttackedThisTurn = 0;
+        cluttersPlayedThisTurn = 0;
     }
     @Override
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
@@ -403,6 +405,7 @@ public class ZephyrSquallMod implements
         timesAttackedThisTurn = 0;
         lastAttackCardTarget = null;
         hasLostHPLastTurn = true;
+        cluttersPlayedThisTurn = 0;
     }
 
     @Override

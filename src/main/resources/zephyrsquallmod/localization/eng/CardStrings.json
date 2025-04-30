@@ -69,6 +69,14 @@
       "This card doesn't cost 0!"
     ]
   },
+  "${modID}:Clutter": {
+    "NAME": "Clutter",
+    "DESCRIPTION": "Deal !D! damage. If you have played less than 2 *Clutters this turn, add a copy into your hand.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. If you have played less than 3 *Clutters this turn, add a copy into your hand.",
+    "EXTENDED_DESCRIPTION": [
+      "{@@} NL (!M! *Clutter{!M!|@=s|1=} played.)"
+    ]
+  },
   "${modID}:Contemplate": {
     "NAME": "Contemplate",
     "DESCRIPTION": "{@@}At the start of your turn, draw !M! additional card{!M!|@=s|1=}."
