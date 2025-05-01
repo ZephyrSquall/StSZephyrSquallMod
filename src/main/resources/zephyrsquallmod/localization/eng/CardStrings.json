@@ -241,6 +241,10 @@
     "NAME": "Seize an Opening",
     "DESCRIPTION": "{@@}If the enemy does not intend to attack, deal !D! damage !M! time{!M!|@=s|1=}."
   },
+  "${modID}:Shh": {
+    "NAME": "Shh!",
+    "DESCRIPTION": "Whenever you play a *Book, gain !M! Block for each of its zephyrsquallmod:Recorded cards."
+  },
   "${modID}:Soar": {
     "NAME": "Soar",
     "DESCRIPTION": "Gain !M! zephyrsquallmod:Flight."

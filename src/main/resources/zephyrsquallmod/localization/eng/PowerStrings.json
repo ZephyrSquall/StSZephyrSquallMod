@@ -111,6 +111,13 @@
       " times you play a #yBook this turn, #yStreamline each of its #yRecorded cards."
     ]
   },
+  "${modID}:Shh": {
+    "NAME": "Shh!",
+    "DESCRIPTIONS": [
+      "Whenever you play a #yBook, gain #b",
+      " #yBlock for each of its #yRecorded cards."
+    ]
+  },
   "${modID}:Tailwind": {
     "NAME": "Tailwind",
     "DESCRIPTIONS": [
