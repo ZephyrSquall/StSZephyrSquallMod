@@ -225,6 +225,14 @@
     "NAME": "Refine",
     "DESCRIPTION": "{@@}Choose {!M!|@=!M! cards|1=a card}. Upgrade {!M!|@=those cards|1=that card} for the rest of combat and zephyrsquallmod:Streamline {!M!|@=them|1=it}."
   },
+  "${modID}:Reshelve": {
+    "NAME": "Reshelve",
+    "DESCRIPTION": "Swap your draw and discard piles. Gain Block equal to their card difference.",
+    "UPGRADE_DESCRIPTION": "Swap your draw and discard piles. Gain Block equal to twice their card difference.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Gains !B! Block.)"
+    ]
+  },
   "${modID}:Riposte": {
     "NAME": "Riposte",
     "DESCRIPTION": "Gain !B! Block. NL Whenever you block an attack this turn, deal damage back equal to blocked damage."
